@@ -4,7 +4,6 @@
 # StorePrice.destroy
 
 Category.create([{name: "Meat, Poultry, & Fish"}, {name: "Produce"}, {name: "Dairy & Eggs"}, {name: "Frozen Food"}, {name: "Beverages"}, {name: "Adult Beverages"}, {name: "Snacks & Candy"}, {name: "Beauty"}, {name: "Healthcare"}, {name: "Home"}, {name: "Baby"}, {name: "Pets"}, {name: "Office Supplies"}, {name: "Electronics"}])
-p Category.all
 
 Store.create([{name: "Walgreens"}, {name: "CVS/Pharmacy"}, {name: "Walmart"}, {name: "Target"}, {name: "Whole Foods"}, {name: "Safeway"}])
 
@@ -18,7 +17,7 @@ ground_beef.store_prices.create(store_id: 5, price: 10.99)
 ground_beef.store_prices.create(store_id: 6, price: 5.84)
 
 ##### Chicken #####
-chicken_thigh = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Thigh / lb. ", brand: "Chicken Drumsticks", description: "Packaged Chicken Drumsticks", image_url: "http://img.21food.com/20110609/product/1305015015796.jpg", tags: "chicken leg drumstick")
+chicken_thigh = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Thigh / lb. ", brand: "Chicken Drumsticks", description: "Packaged Chicken Drumsticks", image_url: "https://www.abelandcole.co.uk/media/294_12722_z.jpg", tags: "chicken leg drumstick")
 chicken_thigh.store_prices.create(store_id: 3, price: 4.59)
 chicken_thigh.store_prices.create(store_id: 4, price: 7.59)
 chicken_thigh.store_prices.create(store_id: 5, price: 9.19)
@@ -31,25 +30,25 @@ chicken_breast.store_prices.create(store_id: 5, price: 9.99)
 chicken_breast.store_prices.create(store_id: 6, price: 6.99)
 
 ### Turkey ###
-deli_turkey = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Turkey", brand: "Deli", description: "Smoked Turkey Breast", image_url: "https://data.beyonddiet.com/getimage.imhx?img=01_15_70_14_1157014-166013.jpg&sw=450&sh=450&w=710&cust=2x1", tags: "turkey deli lunch meat")
+deli_turkey = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Turkey", brand: "Deli", description: "Smoked Turkey Breast", image_url: "https://shop.safeway.com/productimages/100x100/182030895_100x100.jpg", tags: "turkey deli lunch meat")
 deli_turkey.store_prices.create(store_id: 4, price: 6.99)
 deli_turkey.store_prices.create(store_id: 5, price: 10.99)
 deli_turkey.store_prices.create(store_id: 6, price: 7.99)
 
 ### Ham ###
-deli_ham = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Ham", brand: "Deli", description: "S", image_url: "http://linfordofalaska.com/store/images/3005-ALP186.jpg", tags: "deli lunch meat ham")
+deli_ham = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Ham", brand: "Deli", description: "S", image_url: "https://shop.safeway.com/productimages/100x100/182030118_100x100.jpg", tags: "deli lunch meat ham")
 deli_ham.store_prices.create(store_id: 4, price: 6.59)
 deli_ham.store_prices.create(store_id: 4, price: 10.89)
 deli_ham.store_prices.create(store_id: 4, price: 7.39)
 
 #### Fish ####
-shrimp = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Cooked/Peeled Cocktail Shrimp, 1 lb.", description: "Cooked and Peeled Shrimp ready for serving.", image_url: "http://perudelights.com/wp-content/uploads/2013/03/shrimp-cocktail-9.jpg", tags: "cocktail shrimp")
+shrimp = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Cooked/Peeled Cocktail Shrimp, 1 lb.", description: "Cooked and Peeled Shrimp ready for serving.", image_url: "https://previews.123rf.com/images/cokemomo/cokemomo1301/cokemomo130100018/17379188-shrimp-cocktail-prawn-cocktail-appetizer-Stock-Photo.jpg", tags: "cocktail shrimp")
 shrimp.store_prices.create(store_id: 3, price: 8.00)
 shrimp.store_prices.create(store_id: 4, price: 11.29)
 shrimp.store_prices.create(store_id: 5, price: 12.59)
 shrimp.store_prices.create(store_id: 6, price: 9.99)
 
-halibut = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Halibut Fillet, 12 oz.", brand: "Wild Alaska", description: "All natural, skinless, wild caught in Alaska.", image_url: "http://dib2dg2nm3unf.cloudfront.net/i/product/hc02-alaskan-halibut.jpg", tags: "fish fillet halibut skinless")
+halibut = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Halibut Fillet, 12 oz.", brand: "Wild Alaska", description: "All natural, skinless, wild caught in Alaska.", image_url: "https://harborfish.com/wp-content/uploads/2017/05/HalibutFillet.r1.jpg", tags: "fish fillet halibut skinless")
 halibut.store_prices.create(store_id: 3, price: 17.69)
 halibut.store_prices.create(store_id: 4, price: 19.90)
 halibut.store_prices.create(store_id: 5, price: 25.00)
@@ -94,7 +93,7 @@ asparagus.store_prices.create(store_id: 6, price: 5.59)
 
 
 #### Bell Peppers ####
-red_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: " Red Bell Pepper", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_748bbd55-f1ee-4760-9a37-873bd4fe1dd8.jpg", tags: "peppers pepper red bell")
+red_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Red Bell Pepper", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_748bbd55-f1ee-4760-9a37-873bd4fe1dd8.jpg", tags: "peppers pepper red bell")
 red_bell_pepper.store_prices.create(store_id: 3, price: 0.99)
 red_bell_pepper.store_prices.create(store_id: 4, price: 0.99)
 red_bell_pepper.store_prices.create(store_id: 5, price: 1.99)
@@ -154,7 +153,7 @@ butter.store_prices.create(store_id: 5, price: 8.29)
 butter.store_prices.create(store_id: 6, price: 6.99)
 
 ### Shredded Cheese ###
-shredded_cheese = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Mild Shredded Cheddar, 8 oz.", description: "Vegetarian. Delicious Natural Cheese.", image_url: "http://files.recipetips.com/images/glossary/c/cheese_shredded_cheddar.jpg", tags: "cheese shredded cheddar mild")
+shredded_cheese = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Mild Shredded Cheddar, 8 oz.", description: "Vegetarian. Delicious Natural Cheese.", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRij107clBJbRzDHLiIDqjWlPI9fIaKiuQ7zQoIwSbsfKfFldFp", tags: "cheese shredded cheddar mild")
 shredded_cheese.store_prices.create(store_id: 1, price: 3.50)
 shredded_cheese.store_prices.create(store_id: 2, price: 2.75)
 shredded_cheese.store_prices.create(store_id: 3, price: 3.50)
@@ -163,7 +162,7 @@ shredded_cheese.store_prices.create(store_id: 5, price: 4.49)
 shredded_cheese.store_prices.create(store_id: 6, price: 2.99)
 
 ### Milk ###
-fat_free_milk = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Organic Fat Free, 1 gallon", description: "Organic, Vitamin D!", image_url: "http://img.thrfun.com/img/015/737/milk_jug_l2.jpg", tags: "milk fat free fat-free moo")
+fat_free_milk = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Organic Fat Free, 1 gallon", description: "Organic, Vitamin D!", image_url: "https://t4.ftcdn.net/jpg/00/82/13/31/160_F_82133164_ccip4387BdF8cV6Si75DR2x4oSY2fNS7.jpg", tags: "milk fat free fat-free moo")
 fat_free_milk.store_prices.create(store_id: 1, price: 5.50)
 fat_free_milk.store_prices.create(store_id: 2, price: 5.75)
 fat_free_milk.store_prices.create(store_id: 3, price: 6.50)
@@ -172,7 +171,7 @@ fat_free_milk.store_prices.create(store_id: 5, price: 8.49)
 fat_free_milk.store_prices.create(store_id: 6, price: 7.99)
 
 ### coffee creamer ###
-coffee_creamer = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Coffee Creamer, French Vanilla", description: "Organic, Vitamin D!", image_url: "http://2.bp.blogspot.com/-aVDzXM5KQ1c/USRFjuv39WI/AAAAAAAAfIc/NVfMgjqq4nI/s1600/coffee-mate-french-vanilla.png", tags: "coffee creamer french vanilla")
+coffee_creamer = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Coffee Creamer, French Vanilla", description: "Organic, Vitamin D!", image_url: "https://i5.walmartimages.com/asr/16a09f1c-e0f8-4b4d-82a3-c05c5c52aa42_1.067e61791ee07acebe628561597a549d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", tags: "coffee creamer french vanilla")
 coffee_creamer.store_prices.create(store_id: 1, price: 1.99)
 coffee_creamer.store_prices.create(store_id: 2, price: 1.99)
 coffee_creamer.store_prices.create(store_id: 3, price: 2.99)
@@ -181,7 +180,7 @@ coffee_creamer.store_prices.create(store_id: 6, price: 2.29)
 
 ################## Category 4: Frozen Foods
 
-fr_taquitos = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Taquitos, count: 24", description: "Delicious Chicken Taquitos!", image_url: "http://www.ourbestbites.com/wp-content/uploads/2014/07/our-best-bites-baked-taquitos.jpg", tags: "taquitos microwaveable frozen")
+fr_taquitos = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Taquitos, count: 24", description: "Delicious Chicken Taquitos!", image_url: "https://pbs.twimg.com/media/C3VBOo4VUAEV6ZM.jpg", tags: "taquitos microwaveable frozen")
 fr_taquitos.store_prices.create(store_id: 1, price: 5.99)
 fr_taquitos.store_prices.create(store_id: 2, price: 6.59)
 fr_taquitos.store_prices.create(store_id: 3, price: 5.99)
@@ -189,7 +188,7 @@ fr_taquitos.store_prices.create(store_id: 4, price: 5.59)
 fr_taquitos.store_prices.create(store_id: 6, price: 6.79)
 
 
-bagel_bites = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Bagel Bites, count: 40", description: "When pizza is on a bagel, you can have pizza anytime - Maren", image_url: "https://shop.safeway.com/productimages/200x200/148300188_200x200.jpg", tags: "bagel bites microwaveable frozen", tags: "bagel bites")
+bagel_bites = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Bagel Bites, count: 40", description: "When pizza is on a bagel, you can have pizza anytime - Maren", image_url: "https://shop.safeway.com/productimages/200x200/148300188_200x200.jpg", tags: "bagel bites microwaveable frozen")
 bagel_bites.store_prices.create(store_id: 1, price: 9.19)
 bagel_bites.store_prices.create(store_id: 2, price: 10.59)
 bagel_bites.store_prices.create(store_id: 3, price: 9.89)
@@ -270,7 +269,7 @@ ground_coffee.store_prices.create(store_id: 4, price: 9.50)
 ground_coffee.store_prices.create(store_id: 5, price: 11.99)
 ground_coffee.store_prices.create(store_id: 6, price: 9.49)
 
-tea = Item.create(category: Category.find_by(name: "Beverages"), name: "Green Tea, count: 40", description: "A harmonious blend of green tea with lemongrass & spearmint.", image_url: "http://greentea-kyoto.info/image/tea_bag/b1.jpg", tags: "green tea bag")
+tea = Item.create(category: Category.find_by(name: "Beverages"), name: "Green Tea, count: 40", description: "A harmonious blend of green tea with lemongrass & spearmint.", image_url: " https://www.images-iherb.com/w/LOW-07848-1.jpg", tags: "green tea bag")
 tea.store_prices.create(store_id: 1, price: 4.00)
 tea.store_prices.create(store_id: 2, price: 3.20)
 tea.store_prices.create(store_id: 3, price: 4.00)
@@ -609,28 +608,28 @@ oldspice_wash.store_prices.create(store_id: 5, price: 2.80)
 oldspice_wash.store_prices.create(store_id: 6, price: 3.29)
 
 ### Makeup ###
-mascara = Item.create(category: Category.find_by(name: "Beauty"), name: "L'Oreal Voluminous Washable Mascara", brand: "L'Oreal", description: "Our first mascara for instant volume with ferocious full lash density.", image_url: "http://www.cvs.com/bizcontent/merchandising/productimages/large/71249324721.jpg", tags: "l'oreal mascara loreal makeup")
+mascara = Item.create(category: Category.find_by(name: "Beauty"), name: "L'Oreal Voluminous Washable Mascara", brand: "L'Oreal", description: "Our first mascara for instant volume with ferocious full lash density.", image_url: "https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/1ed4470e-683b-4e90-8766-ea4cf5e61a92.jpg._CB325154658__SR300,300_.jpg", tags: "l'oreal mascara loreal makeup")
 mascara.store_prices.create(store_id: 1, price: 7.49)
 mascara.store_prices.create(store_id: 2, price: 9.29)
 mascara.store_prices.create(store_id: 3, price: 8.39)
 mascara.store_prices.create(store_id: 4, price: 9.90)
 mascara.store_prices.create(store_id: 6, price: 8.99)
 
-lip_color = Item.create(category: Category.find_by(name: "Beauty"), name: "L'Oreal Voluminous Washable Mascara", brand: "L'Oreal", description: "Our first mascara for instant volume with ferocious full lash density.", image_url: "http://www.cvs.com/bizcontent/merchandising/productimages/large/86800437741.jpg", tags: "neutrogrena color stick lipstick makeup")
+lip_color = Item.create(category: Category.find_by(name: "Beauty"), name: "Neutrogena MoistureSmooth Color Stick", brand: "Neutrogena", description: "Keep your lips colorful and extra glamorous with MoistureSmooth Color Stick.", image_url: "https://target.scene7.com/is/image/Target/14462962?wid=520&hei=520&fmt=pjpeg", tags: "neutrogrena color stick lipstick makeup")
 lip_color.store_prices.create(store_id: 1, price: 7.49)
 lip_color.store_prices.create(store_id: 2, price: 7.29)
 lip_color.store_prices.create(store_id: 3, price: 8.39)
 lip_color.store_prices.create(store_id: 4, price: 8.90)
 lip_color.store_prices.create(store_id: 6, price: 8.59)
 
-powder = Item.create(category: Category.find_by(name: "Beauty"), name: "Revlon New Complexion One-Step Makeup", brand: "Revlon", description: "Lets skin breathe for a naturally perfected look. Glides on creamy smooth, finishes powder light.", image_url: "http://www.cvs.com/bizcontent/merchandising/productimages/large/30997436410.jpg", tags: "powder revlon face makeup")
+powder = Item.create(category: Category.find_by(name: "Beauty"), name: "Revlon New Complexion One-Step Makeup", brand: "Revlon", description: "Lets skin breathe for a naturally perfected look. Glides on creamy smooth, finishes powder light.", image_url: "https://images-na.ssl-images-amazon.com/images/I/71TBhSRhtzL._SY355_.jpg", tags: "powder revlon face makeup")
 powder.store_prices.create(store_id: 1, price: 13.49)
 powder.store_prices.create(store_id: 2, price: 12.29)
 powder.store_prices.create(store_id: 3, price: 13.39)
 powder.store_prices.create(store_id: 4, price: 14.90)
 powder.store_prices.create(store_id: 6, price: 13.59)
 
-blush = Item.create(category: Category.find_by(name: "Beauty"), name: "Neutrogena Healthy Skin Blends", brand: "Neutrogena", description: "This powder blush helps control oil and shine, providing sheer, illuminating color for a natural glow.", image_url: "http://www.cvs.com/bizcontent/merchandising/productimages/large/86800438199.jpg", tags: "powder neutrogena blush face makeup")
+blush = Item.create(category: Category.find_by(name: "Beauty"), name: "Neutrogena Healthy Skin Blends", brand: "Neutrogena", description: "This powder blush helps control oil and shine, providing sheer, illuminating color for a natural glow.", image_url: "https://images-na.ssl-images-amazon.com/images/I/91ho3NlZFlL._SY355_.jpg", tags: "powder neutrogena blush face makeup")
 blush.store_prices.create(store_id: 1, price: 12.49)
 blush.store_prices.create(store_id: 2, price: 12.29)
 blush.store_prices.create(store_id: 3, price: 12.39)
@@ -1022,3 +1021,13 @@ teether.store_prices.create(store_id: 5, price: 8.69)
 teether.store_prices.create(store_id: 6, price: 7.89)
 
 #################### Category 12: Pets
+
+### cats ###
+
+wet_catfood = Item.create(category: Category.find_by(name: "Pets"), name: "Fancy Feast Cat Food Gourmet Classic Ocean Whitefish & Tuna Feast - 3 Oz", brand: "Nestle", description: "Gourment cat food.", image_url: "https://shop.safeway.com/productimages/200x200/132060045_200x200.jpg", tags: "cat food gourment")
+wet_food.store_prices.create(store_id: 1, price: 0.89)
+wet_food.store_prices.create(store_id: 2, price: 1.19)
+wet_food.store_prices.create(store_id: 3, price: 0.99)
+wet_food.store_prices.create(store_id: 4, price: 0.99)
+wet_food.store_prices.create(store_id: 5, price: 1.69)
+wet_food.store_prices.create(store_id: 6, price: 0.95)
