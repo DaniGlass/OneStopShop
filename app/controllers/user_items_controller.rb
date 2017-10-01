@@ -1,10 +1,10 @@
 class UserItemsController < ApplicationController
 
 	def create
-	  p "$" * 100 
-	  p params[:user_items]
+	  p "$" * 1000
+	  # p params[:user_items][:item_id].to_i
 	  # checked the route from add button and working fine.
-	  # UserItem.create(user_id: current_user.id, item_id: Will pass from front end)
+	  UserItem.create(user_id: current_user.id, item_id: params[:user_items][:item_id].to_i)
 	end
 
   def show
