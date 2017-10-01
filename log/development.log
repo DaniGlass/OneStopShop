@@ -1,0 +1,235 @@
+Started GET "/" for 127.0.0.1 at 2017-09-30 21:34:26 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (8.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (17.8ms)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 11.3ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2021256069258692829_70240014441400'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:35:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:39:28 -0700
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:39:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 4.0ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2021256069258692829_70240019468040'
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2021256069258692829_70240019468040'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:39:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.7ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2021256069258692829_70240075652760'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:40:32 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 4.2ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2971167077978499930_70314484125560'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:40:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.4ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2971167077978499930_70314541211320'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:41:57 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 4.4ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2199321107175581680_70185632643060'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:44:10 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.6ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2199321107175581680_70185634720940'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:44:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__2199321107175581680_70185648597000'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:44:25 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 3.7ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4462553106035503816_70231730018320'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:44:27 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.0ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4462553106035503816_70231757172020'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:44:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4462553106035503816_70231796270760'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:52:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4462553106035503816_70231802167900'
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:52:25 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.3ms)
+
+
+  
+LoadError (cannot load such file -- coffee_script):
+  
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___4462553106035503816_70231784726380'
+Started GET "/" for 127.0.0.1 at 2017-09-30 21:52:36 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendered categories/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 582ms (Views: 570.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2017-09-30 21:52:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 81ms (Views: 30.3ms | ActiveRecord: 2.9ms)
+
+
