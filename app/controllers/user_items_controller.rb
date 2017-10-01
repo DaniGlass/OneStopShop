@@ -2,16 +2,16 @@ class UserItemsController < ApplicationController
 
 	def create
 	  p "$" * 100 
+	  p params[:user_items]
 	  # checked the route from add button and working fine.
 	  # UserItem.create(user_id: current_user.id, item_id: Will pass from front end)
+	end
 
   def show
   	p "&" * 100
   	# I need to check with Edgar how to call cunrrent_user
   	# @item_list = current_user.items
   end
-
-	end
 
 	def destroy
 		p "*" * 100
