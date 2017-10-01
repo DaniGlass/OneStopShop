@@ -1,13 +1,20 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
+
+import {categories} from '../config/data';
+import colors from '../config/colors';
+import {CategoriesList} from '../components/CategoriesList';
 
 class Search extends Component {
+
   render() {
+    // const categories = this.props.navigation.state.params;
+
     return (
-      <View
-        style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Search Screen</Text>
-      </View>
+      <ScrollView
+        style={{ backgroundColor: colors.background }}>
+        <CategoriesList {...categories} />
+      </ScrollView>
     );
   }
 }

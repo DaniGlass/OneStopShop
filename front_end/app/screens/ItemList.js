@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import colors from '../config/colors'
-import { ItemList } from '..'
+// import { ItemList } from '..'
 
 class ItemList extends Component {
   render() {
