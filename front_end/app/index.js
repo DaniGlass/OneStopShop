@@ -10,7 +10,7 @@ import Splash from './screens/Splash'
 import UserAccount from './screens/UserAccount'
 
 const App = () => {
-  return <Login />;
+  return <ItemList />;
 };
 
 export default App

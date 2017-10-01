@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
+import colors from '../config/colors'
 
 class ItemList extends Component {
   render() {
     return (
-      <View
-        style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>ItemList Screen</Text>
-      </View>
+      <FlatList
+        style={{ backgroundColor: colors.background}}
+        // data={category_items}
+        // renderItem={({item}) =>
+        //   <View><Text>{item.image_url}{item.name}{item.brand}}</Text></View>}
+        // keyExtractor={(item) => item.id}
+      />
     );
   }
 }
