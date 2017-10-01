@@ -12,7 +12,10 @@ const Item = ({ item, onPress }) => {
         source={{ uri: item.image_url }}
         style={styles.image}
       />
-      <Text>{item.name}</Text>
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.name}>{item.name}</Text>
+        <Text style={styles.description}>{item.description}</Text>
+      </View>
     </View>
   );
 };
