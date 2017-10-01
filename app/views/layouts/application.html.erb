@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <!-- THIS NEEDS TO GO TO 'USER_PATH' WHEN ITS READY -->
+      <li><%= link_to "Logout", destroy_user_session_path, {method: :delete} %></li>
+      <li><%= link_to current_user.name, current_user %></li>
+    <% else %>
+      <li><%= link_to "Login", user_session_path %></li>
+      <li><%= link_to "Register", new_user_registration_path %></li>
+    <% end %>
     <%= yield %>
   </body>
 </html>

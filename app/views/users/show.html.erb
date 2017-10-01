@@ -1,0 +1,11 @@
+<h1>Account Info</h1>
+
+<div id="user-details">
+  <label>Name:</label>
+  <span><%= @user.name %></span>
+  <br>
+  <label>E-mail:</label>
+  <span><%= @user.email %></span>
+</div>
+
+<%= link_to "Edit your account details", edit_user_registration_path %>
