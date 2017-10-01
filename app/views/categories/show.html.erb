@@ -4,7 +4,10 @@
 <% @items.each do |item| %>
 	<li>
 		<%= item.name %>
-		<%= button_to "Add", {:controller => "user_items"}  %>
+		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
+			<%= f.hidden_field(:item_id, :value => item.id) %>
+			<%= f.submit "Add" %>
+		<% end %>
 	</li>
 <% end %>
 </ul>
