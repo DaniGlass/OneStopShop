@@ -9,6 +9,15 @@ export default StyleSheet.create({
     paddingHowizontal: 15,
     paddingVertical: 8,
   },
-  // Also need to add styles for item image, name, and brand
+  // name: {
+    // somthing
+  // },
 
+  // brand: {
+    // something
+  // },
+
+  // image: {
+    // something
+  // },
 })
