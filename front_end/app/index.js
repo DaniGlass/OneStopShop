@@ -1,18 +1,22 @@
 import React from 'react';
+import {StackNavigator} from 'react-navigation';
 
-// THIS IS FOR TESTING EACH
-// import ItemList from './screens/ItemList'
-// import Login from './screens/Login'
-// import PickStop from './screens/PickStop'
-// import Search from './screens/Search'
-// import ShoppingList from './screens/ShoppingList'
-// import Splash from './screens/Splash'
-// import UserAccount from './screens/UserAccount'
+import Search from './screens/Search';
+import ItemList from './screens/ItemList';
 
-import {CategoriesStack} from './config/router.js'
-
-const App = () => {
-  return <CategoriesStack />;
-};
+const App = StackNavigator({
+  Search: {
+    screen: Search,
+    navigationOptions: {
+      title: 'Search',
+    },
+  },
+  ItemList: {
+    screen: ItemList,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+    }),
+  },
+});
 
 export default App;

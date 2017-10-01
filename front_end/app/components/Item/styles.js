@@ -6,18 +6,15 @@ export default StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHowizontal: 15,
+    paddingHorizontal: 15,
     paddingVertical: 8,
   },
-  // name: {
-    // somthing
-  // },
-
+  image: {
+    width: window.width / 2,
+    height: window.width / 2,
+    borderRadius: window.width / 4,
+  },
   // brand: {
-    // something
-  // },
-
-  // image: {
     // something
   // },
 })
