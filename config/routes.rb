@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   	
   resources :user_items
 
+  resources :stores
+
 	root 'categories#index'
 
 end

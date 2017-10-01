@@ -437,3 +437,512 @@ Processing by UserItemsController#index as HTML
 Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:29:29 -0700
+  [1m[35m (16.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:6: syntax error, unexpected ')'
+=( link_to "Make a Stop!",   );@output_buffer.safe_append='<
+                              ^
+/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/user_items/index.html.erb:6: syntax error, unexpected ')'
+app/views/user_items/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/user_items/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:29:52 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:6: syntax error, unexpected ')'
+=( link_to "Make a Stop!",   );@output_buffer.safe_append='<
+                              ^
+/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/Ikuko/Desktop/OneStopShop/app/views/user_items/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/user_items/index.html.erb:6: syntax error, unexpected ')'
+app/views/user_items/index.html.erb:8: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/user_items/index.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:38:12 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (285.6ms)
+Completed 500 Internal Server Error in 297ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action' for #<#<Class:0x007fdbbc4b1b68>:0x007fdbbd0533b8>
+Did you mean?  action_name):
+    3: <p>go back to user_items_controller.rb</p>
+    4: <p>copy and paste the bottom part here</p>
+    5: 
+    6: <h3><%= button_to "Make a Stop", {:controller => "user_items", action => "destroy"}  %></h3>	
+  
+app/views/user_items/index.html.erb:6:in `_app_views_user_items_index_html_erb___60591409989986388_70290866819720'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:38:56 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (302.3ms)
+Completed 500 Internal Server Error in 313ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action_user_items' for #<#<Class:0x007fdbbc4b1b68>:0x007fdbbd0c3140>
+Did you mean?  action_name):
+    3: <p>go back to user_items_controller.rb</p>
+    4: <p>copy and paste the bottom part here</p>
+    5: 
+    6: <h3><%= button_to "Make a Stop", {:controller => "user_items", action_user_items => "destroy"}  %></h3>	
+  
+app/views/user_items/index.html.erb:6:in `_app_views_user_items_index_html_erb___60591409989986388_70290868405960'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:39:13 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (282.0ms)
+Completed 500 Internal Server Error in 290ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `action_user_items' for #<#<Class:0x007fdbbc4b1b68>:0x007fdbbf4b8820>
+Did you mean?  action_name):
+    3: <p>go back to user_items_controller.rb</p>
+    4: <p>copy and paste the bottom part here</p>
+    5: 
+    6: <h3><%= button_to "Make a Stop", {:controller => "user_items", action_user_items => "destroy"}  %></h3>	
+  
+app/views/user_items/index.html.erb:6:in `_app_views_user_items_index_html_erb___60591409989986388_70290891983260'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:39:25 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_items?index=destroy" for 127.0.0.1 at 2017-10-01 09:39:52 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"njxC0zQNQEC4+1tky78sZ0ZPVXup1IhQ0hkFji0JvLQ7I63sw540OI+fbeMOcRQsZaBVELyPAGtmLI/L0OUplA==", "index"=>"destroy"}
+No template found for UserItemsController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/user_items?index=destroy" for 127.0.0.1 at 2017-10-01 09:39:52 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"njxC0zQNQEC4+1tky78sZ0ZPVXup1IhQ0hkFji0JvLQ7I63sw540OI+fbeMOcRQsZaBVELyPAGtmLI/L0OUplA==", "index"=>"destroy"}
+No template found for UserItemsController#create, rendering head :no_content
+Completed 204 No Content in 133ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:45:12 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_items" for 127.0.0.1 at 2017-10-01 09:45:16 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"9lqimUhXds5iV/KblOps7EPtXa51Zdvb61oyaOHWKShTRU2mv8QCtlUzxBxRJFSnYAJdxWA+U+Bfb7gtHDq8CA=="}
+No template found for UserItemsController#create, rendering head :no_content
+Completed 204 No Content in 137ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 09:53:23 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_items" for 127.0.0.1 at 2017-10-01 09:53:24 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y//WdCdOFbC13NXDuE5sVYFFTHZBh9VlQBEK5+6k/1jG4DlL0N1hyIK440R9gFQeoqpMHVTcXV70JICiE0hqeA=="}
+No template found for UserItemsController#create, rendering head :no_content
+Completed 204 No Content in 132ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items/1" for 127.0.0.1 at 2017-10-01 09:54:08 -0700
+Processing by UserItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 406 Not Acceptable in 144ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (UserItemsController#show is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:00:16 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:05:53 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_items" for 127.0.0.1 at 2017-10-01 10:05:55 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"authenticity_token"=>"5Cc4cvBQ3AUC4Shv0h/5T7hx8jn0B5O0Nn14ue9qBfNBONdNB8OofTWFHugX0cEEm57yUuFcG4+CSPL8EoaQ0w=="}
+No template found for UserItemsController#create, rendering head :no_content
+Completed 204 No Content in 141ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:06:10 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"stores"}):
+    3: <p>go back to user_items_controller.rb</p>
+    4: <p>copy and paste the bottom part here</p>
+    5: 
+    6: <h3><%= button_to "Make a Stop", {:controller => "stores" }  %></h3>	
+  
+app/views/user_items/index.html.erb:6:in `_app_views_user_items_index_html_erb___60591409989986388_70290892975340'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:07:03 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/stores" for 127.0.0.1 at 2017-10-01 10:07:06 -0700
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for StoresController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/stores" for 127.0.0.1 at 2017-10-01 10:07:44 -0700
+  
+AbstractController::ActionNotFound (The action 'create' could not be found for StoresController):
+  
+actionpack (5.1.4) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:08:01 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:08:05 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stores" for 127.0.0.1 at 2017-10-01 10:08:07 -0700
+Processing by StoresController#index as HTML
+  Rendering stores/index.html.erb within layouts/application
+  Rendered stores/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 106ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2017-10-01 10:09:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/items"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:09:46 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"user_items"}):
+    5: 
+    6: <h3><%= link_to "Make a Stop", {:controller => "stores" }  %></h3>	
+    7: 
+    8: <%= button_to "Delete", {:controller => "user_items", :action => "destroy"}  %>
+  
+app/views/user_items/index.html.erb:8:in `_app_views_user_items_index_html_erb___60591409989986388_70290869968960'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:10:16 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"user_items"}):
+    5: 
+    6: <h3><%= link_to "Make a Stop", {:controller => "stores" }  %></h3>	
+    7: 
+    8: <%= button_to "Delete", {:controller => "user_items", :action => "destroy"}  %>
+  
+app/views/user_items/index.html.erb:8:in `_app_views_user_items_index_html_erb___60591409989986388_70290891145860'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:10:51 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"user_items"}):
+    5: 
+    6: <h3><%= link_to "Make a Stop", {:controller => "stores" }  %></h3>	
+    7: 
+    8: <%= button_to "Delete", {:controller => "user_items", :action => "destroy"}  %>
+  
+app/views/user_items/index.html.erb:8:in `_app_views_user_items_index_html_erb___60591409989986388_70290890297140'
+Started GET "/user_items" for 127.0.0.1 at 2017-10-01 10:11:01 -0700
+Processing by UserItemsController#index as HTML
+  Rendering user_items/index.html.erb within layouts/application
+  Rendered user_items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mStore Load (12.7ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mItem Load (101.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (20.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (57.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (80.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStore Load (2.0ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" WHERE "stores"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (33.0ms)[0m  [1m[32mINSERT INTO "store_prices" ("item_id", "store_id", "price", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["item_id", 1], ["store_id", 1], ["price", 8.0], ["created_at", "2017-10-01 17:16:34.839323"], ["updated_at", "2017-10-01 17:16:34.839323"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" INNER JOIN "store_prices" ON "stores"."id" = "store_prices"."store_id" WHERE "store_prices"."item_id" = $1 LIMIT $2[0m  [["item_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (1.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.6ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" INNER JOIN "store_prices" ON "stores"."id" = "store_prices"."store_id" WHERE "store_prices"."item_id" = $1 LIMIT $2[0m  [["item_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.5ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" INNER JOIN "store_prices" ON "stores"."id" = "store_prices"."store_id" WHERE "store_prices"."item_id" = $1 ORDER BY "stores"."id" ASC LIMIT $2[0m  [["item_id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 ORDER BY "items"."id" ASC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "stores"."name" FROM "stores" INNER JOIN "store_prices" ON "stores"."id" = "store_prices"."store_id" WHERE "store_prices"."item_id" = $1[0m  [["item_id", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
