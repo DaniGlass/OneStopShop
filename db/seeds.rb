@@ -175,3 +175,39 @@ fr_taquitos = Item.create([{category_id: 4, name: "Taquitos, count: 24", descrip
 fr_taquitos.store_prices.create(store_id: 3, price: 5.99)
 fr_taquitos.store_prices.create(store_id: 4, price: 6.59)
 fr_taquitos.store_prices.create(store_id: 6, price: 6.79)
+
+bagel_bites = Item.create([{category_id: 4, name: "Bagel Bites, count: 40", description: "When pizza is on a bagel, you can have pizza anytime - Maren", image_url: "https://shop.safeway.com/productimages/200x200/148300188_200x200.jpg", tags: "bagel bites microwaveable frozen", tags: "bagel bites"}])
+fr_taquitos.store_prices.create(store_id: 3, price: 9.99)
+fr_taquitos.store_prices.create(store_id: 4, price: 10.59)
+fr_taquitos.store_prices.create(store_id: 6, price: 11.19)
+
+digiorno = Item.create([{category_id: 4, name: "Pizza Rising Crust Four Cheese", description: "We start with our preservative-free rising crust, and then top it off with our signature sauce, made from scratch using California vine-ripened tomatoes", image_url: "https://shop.safeway.com/productimages/200x200/148050178_200x200.jpg", tags: "pizza frozen"}])
+digiorno.store_prices.create(store_id: 3, price: 4.99)
+digiorno.store_prices.create(store_id: 4, price: 5.50)
+digiorno.store_prices.create(store_id: 6, price: 5.99)
+
+############## Category 5: Beverages
+
+ground_coffee = Item.create([{category_id: 5, name: "French Roast, 12 oz.", description: "French Roast Ground", image_url: "https://a1coffee.net/media/catalog/category/ground_coffee_.jpg", tags: "coffee ground"}])
+ground_coffee.store_prices.create(store_id: 3, price: 8.99)
+ground_coffee.store_prices.create(store_id: 4, price: 9.50)
+ground_coffee.store_prices.create(store_id: 5, price: 11.99)
+ground_coffee.store_prices.create(store_id: 6, price: 9.99)
+
+tea = Item.create([{category_id: 5, name: "Green Tea, count: 40", description: "A harmonious blend of green tea with lemongrass & spearmint.", image_url: "http://greentea-kyoto.info/image/tea_bag/b1.jpg", tags: "green tea bag"}])
+tea.store_prices.create(store_id: 3, price: 4.00)
+tea.store_prices.create(store_id: 4, price: 4.20)
+tea.store_prices.create(store_id: 5, price: 4.49)
+tea.store_prices.create(store_id: 6, price: 4.40)
+
+cranberry = Item.create([{category_id: 5, name: "Cranberry Juice Cocktail", brand: "Ocean Spray", description: "100% Vitamin C", image_url: "https://i5.walmartimages.com/asr/7e005b10-8b96-4ecb-815d-0043f20d74c8_1.b28b6ea931ceb30657ae47adcaa5551f.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", tags: "cranberry juice"}])
+cranberry.store_prices.create(store_id: 3, price: 4.00)
+cranberry.store_prices.create(store_id: 4, price: 4.20)
+cranberry.store_prices.create(store_id: 6, price: 4.40)
+
+lacroix = Item.create([{category_id: 5, name: "LaCroix Sparkling Water Lime, count: 12", brand: "LaCroix", description: "Every millenial's dream", image_url: "https://shop.safeway.com/productimages/100x100/108101500_100x100.jpg", tags: "cranberry juice"}])
+cranberry.store_prices.create(store_id: 3, price: 4.90)
+cranberry.store_prices.create(store_id: 4, price: 6.20)
+cranberry.store_prices.create(store_id: 6, price: 5.80)
+
+################ Category: 6 Adult Beverages
