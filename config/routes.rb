@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :user_items
-  
-  # get 'list/index' => 'list#index'
-  # post 'list/new' => 'list#new'
+ 
 
 	root 'categories#index'
 
