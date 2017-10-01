@@ -1,19 +1,38 @@
-import React, {Component} from 'react';
-import {View, Text, FlatList} from 'react-native';
-import colors from '../config/colors'
-// import { ItemList } from '..'
+import React, { Component } from 'react';
+import { View, Text, ScrollView } from 'react-native';
+import axios from 'axios';
+
+import colors from '../config/colors';
+import { Item } from '../components/Item';
 
 class ItemList extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: []
+    };
+  }
+
+  componentDidMount() {
+    const category = this.props.navigation.state.params;
+    axios.get(`http://localhost:3000/categories/${category.id}`)
+      .then(response => {
+        console.log(response.data);
+        this.setState({items: response.data})
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   render() {
     return (
-      <FlatList
-        style={{ backgroundColor: colors.background}}
-        // data={category_items}
-        // renderItem={({item}) =>
-        //   <View><Text>{item.image_url}{item.name}{item.brand}}</Text></View>}
-        // keyExtractor={(item) => item.id}
-      />
+      <ScrollView style={{ backgroundColor: colors.background}}>
+        {this.state.items.map((item, idx) => (
+          <Item item={item} key={idx} />
+        ))}
+      </ScrollView>
     );
   }
 }
