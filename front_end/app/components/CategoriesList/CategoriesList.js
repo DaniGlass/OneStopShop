@@ -10,7 +10,7 @@ const CategoriesList = ({category, onPress}) => {
       underlayColor={colors.rowUnderlay}
     >
       <View style={styles.row}>
-        <Text>category.name</Text>
+        <Text>{category.name}</Text>
       </View>
     </TouchableHighlight>
   );
