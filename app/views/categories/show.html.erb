@@ -1,0 +1,11 @@
+<h1><%= @category.name %></h1>
+
+<ul>
+<% @items.each do |item| %>
+	<li>
+		<%= item.name %>
+		<%= button_to "Add", {:controller => "user_items"}  %>
+	</li>
+<% end %>
+</ul>
+	
