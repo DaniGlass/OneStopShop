@@ -4,6 +4,7 @@ import colors from '../config/colors'
 // import { ItemList } from '..'
 
 class ItemList extends Component {
+
   render() {
     return (
       <FlatList
