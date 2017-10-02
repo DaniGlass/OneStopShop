@@ -10,7 +10,7 @@ class UserItemsController < ApplicationController
   def show
   	p "&" * 100
   	# I need to check with Edgar how to call cunrrent_user
-  	# @item_list = current_user.items
+  	@item_list = current_user.items
   end
 
 	def destroy
@@ -23,7 +23,7 @@ end
 # Paste to user_items.index.html.erb
 
 # <% @item_list.pluck(:name).each do |item_name| %>
-# 	<%= item_name %> 
+# 	<%= item_name %>
 
 # this part is not right. To delete we need to use user show page.
     # <%= button_to "Delete", {:controller => "user_items"}  %>
