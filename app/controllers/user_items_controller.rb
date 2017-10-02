@@ -1,14 +1,24 @@
 class UserItemsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
 	def create
-	  p "$" * 1000
+	  # user = User.find_by(params[:token])
 	  # p params[:user_items][:item_id].to_i
 	  # checked the route from add button and working fine.
-	  UserItem.create(user_id: current_user.id, item_id: params[:user_items][:item_id].to_i)
+
+    # itemPressed = params[:item][:name]
+    itemName = params[:item][:name]
+    item = Item.find_by(name: itemName)
+	  userItem = UserItem.new
+    userItem.user_id = User.first.id
+    userItem.item_id = item.id
+    userItem.save
+
+    render json: userItem.to_json
 	end
 
   def show
-  	p "&" * 100
+  	# p "&" * 100
   	# I need to check with Edgar how to call cunrrent_user
   	@item_list = current_user.items
   end
