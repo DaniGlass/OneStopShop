@@ -8,13 +8,26 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 8,
+    backgroundColor: colors.row,
+    marginVertical: 1,
   },
   image: {
-    width: window.width / 2,
-    height: window.width / 2,
-    borderRadius: window.width / 4,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 10,
   },
-  // brand: {
-    // something
-  // },
+  name: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: colors.primaryText,
+  },
+  description: {
+    fontSize: 13,
+    color: colors.subtleText,
+  },
+  descriptionContainer: {
+    flex: 0.9,
+    flexWrap: 'wrap',
+  },
 })
