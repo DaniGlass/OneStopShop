@@ -24,7 +24,7 @@ class UserItemsController < ApplicationController
   def show
   	# p "&" * 100
   	# I need to check with Edgar how to call cunrrent_user
-  	# @item_list = current_user.items
+  	@item_list = current_user.items
   end
 
 	def destroy
