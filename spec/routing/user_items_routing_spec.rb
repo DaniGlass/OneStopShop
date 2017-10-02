@@ -2,8 +2,8 @@ require "rails_helper"
 
 RSpec.describe "Routing to user_items", :type => :routing do
 
-  it "routes GET /user_items/1 to user_items#show" do
-    expect(:get => "/user_items/1").to route_to("user_items#show", :id => "1")
+  it "routes GET /user_items to user_items#index" do
+    expect(:get => "/user_items").to route_to("user_items#index")
   end
 
   it "routes POST /user_items to user_items#create" do
