@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :stores
 
-  devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:new, :create, :show, :delete]
+
+  post 'authenticate', to: 'authentication#authenticate'
 
 	root 'categories#index'
 

@@ -3,8 +3,15 @@ import {StackNavigator} from 'react-navigation';
 
 import Search from './screens/Search';
 import ItemList from './screens/ItemList';
+import Login from './screens/Login'
 
 const App = StackNavigator({
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      title: 'Login',
+    },
+  },
   Search: {
     screen: Search,
     navigationOptions: {
@@ -17,6 +24,8 @@ const App = StackNavigator({
       title: `${navigation.state.params.name}`,
     }),
   },
+
+
 });
 
 export default App;
