@@ -1,7 +1,4 @@
 class UserItemsController < ApplicationController
-	
-	require 'user_items_helper'
-	include ItemAddingValidation
 
   skip_before_action :verify_authenticity_token
 
@@ -22,13 +19,14 @@ class UserItemsController < ApplicationController
 	end
 
   def show
-  	# p "&" * 100
-  	# I need to check with Edgar how to call cunrrent_user
-  	@item_list = current_user.items
+  	@user_item = UserItem.find(params[:id])
+    render json: items.to_json
   end
 
 	def destroy
-		p "*" * 100
+		@user_item = UserItem.find(params[:id])
+    @user_item.destroy
+
 	end
 
 end
