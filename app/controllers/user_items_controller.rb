@@ -18,9 +18,8 @@ class UserItemsController < ApplicationController
 	end
 
   def show
-  	# p "&" * 100
-  	# I need to check with Edgar how to call cunrrent_user
-  	# @item_list = current_user.items
+  	@user_item = UserItem.find(params[:id])
+    render json: items.to_json
   end
 
 	def destroy

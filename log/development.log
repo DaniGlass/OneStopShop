@@ -1195,3 +1195,5 @@ Processing by CategoriesController#show as JSON
 Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms)
 
 
+  [1m[36mUser Load (94.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mItem Load (48.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
