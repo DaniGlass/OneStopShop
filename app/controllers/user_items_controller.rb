@@ -2,25 +2,26 @@ class UserItemsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-	def create
-	  # user = User.find_by(params[:token])
-	  # p params[:user_items][:item_id].to_i
-	  # checked the route from add button and working fine.
+  def index
+    user = User.first
+    items = user.items
+    render json: items.to_json
+  end
+
+  def create
+    # user = User.find_by(params[:token])
+    # p params[:user_items][:item_id].to_i
+    # checked the route from add button and working fine.
 
     # itemPressed = params[:item][:name]
     itemName = params[:item][:name]
     item = Item.find_by(name: itemName)
-	  userItem = UserItem.new
+    userItem = UserItem.new
     userItem.user_id = User.first.id
     userItem.item_id = item.id
     userItem.save
 
     render json: userItem.to_json
-	end
-
-  def show
-  	@user_item = UserItem.find(params[:id])
-    render json: items.to_json
   end
 
 	def destroy
