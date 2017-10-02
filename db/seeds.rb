@@ -277,6 +277,22 @@ tea.store_prices.create(store_id: 4, price: 3.20)
 tea.store_prices.create(store_id: 5, price: 4.49)
 tea.store_prices.create(store_id: 6, price: 4.40)
 
+oj = Item.create(category: Category.find_by(name: "Beverages"), name: "Floridas Natural Juice Orange Original - 89 Fl. Oz.", description: "Premium. Squeezed from our fresh oranges. Not from concentrate. 100\% pure Florida pasteurized orange juice.", image_url: "https://shop.safeway.com/productimages/200x200/960042370_200x200.jpg", tags: "orange juice")
+oj.store_prices.create(store_id: 1, price: 4.10)
+oj.store_prices.create(store_id: 2, price: 3.90)
+oj.store_prices.create(store_id: 3, price: 4.30)
+oj.store_prices.create(store_id: 4, price: 3.29)
+oj.store_prices.create(store_id: 5, price: 4.49)
+oj.store_prices.create(store_id: 6, price: 4.59)
+
+v8 = Item.create(category: Category.find_by(name: "Beverages"), name: "V8 Vegetable Juice Original - 46 Fl. Oz.", description: "Fresh new look! 2 servings of veggies.", image_url: "https://shop.safeway.com/productimages/200x200/120010041_200x200.jpg", tags: "vegetable juice")
+v8.store_prices.create(store_id: 1, price: 4.79)
+v8.store_prices.create(store_id: 2, price: 4.80)
+v8.store_prices.create(store_id: 3, price: 4.39)
+v8.store_prices.create(store_id: 4, price: 4.19)
+v8.store_prices.create(store_id: 5, price: 5.49)
+v8.store_prices.create(store_id: 6, price: 4.49)
+
 cranberry = Item.create(category: Category.find_by(name: "Beverages"), name: "Cranberry Juice Cocktail", brand: "Ocean Spray", description: "100\% Vitamin C", image_url: "https://i5.walmartimages.com/asr/7e005b10-8b96-4ecb-815d-0043f20d74c8_1.b28b6ea931ceb30657ae47adcaa5551f.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", tags: "cranberry juice")
 cranberry.store_prices.create(store_id: 1, price: 4.00)
 cranberry.store_prices.create(store_id: 2, price: 3.20)
@@ -292,6 +308,14 @@ lacroix.store_prices.create(store_id: 3, price: 5.80)
 lacroix.store_prices.create(store_id: 4, price: 5.90)
 lacroix.store_prices.create(store_id: 5, price: 6.20)
 lacroix.store_prices.create(store_id: 6, price: 5.80)
+
+sbucks_iced = Item.create(category: Category.find_by(name: "Beverages"), name: "Starbucks Iced Coffee Unsweetened - 48 Fl. Oz.", brand: "Starbucks", description: "Premium coffee beverage. Smooth & balanced.", image_url: "https://shop.safeway.com/productimages/200x200/960111804_200x200.jpg", tags: "starbucks iced coffee unsweetened")
+sbucks_iced.store_prices.create(store_id: 1, price: 5.15)
+sbucks_iced.store_prices.create(store_id: 2, price: 4.20)
+sbucks_iced.store_prices.create(store_id: 3, price: 5.79)
+sbucks_iced.store_prices.create(store_id: 4, price: 4.99)
+sbucks_iced.store_prices.create(store_id: 5, price: 6.20)
+sbucks_iced.store_prices.create(store_id: 6, price: 5.59)
 
 ################ Category: 6 Adult Beverages
 
