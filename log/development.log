@@ -1,0 +1,282 @@
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:25:26 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `results' for #<User:0x007feb0e851f00>):
+  
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:31:51 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+    [{self.name: {total_price: total_price, n...
+                ^
+/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+...d_count: missing_items.count} }]
+...                               ^):
+  
+app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+app/models/user.rb:11:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:32:37 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+    {self.name: {total_price: total_price, n...
+               ^
+/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+app/models/user.rb:11:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:33:59 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:35:31 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:36:21 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:38:37 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 4.0ms)
+
+
+  
+NameError (undefined local variable or method `user_list' for #<Store:0x007feb120a1d88>):
+  
+app/models/store.rb:6:in `find_users_missing_items'
+app/models/store.rb:10:in `items_to_user_items'
+app/models/user.rb:14:in `block in results'
+app/models/user.rb:13:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:39:12 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:40:25 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:45:32 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:09 -0700
+  
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/user.rb:14: syntax error, unexpected ')', expecting keyword_end):
+  
+app/models/user.rb:14: syntax error, unexpected ')', expecting keyword_end
+config/routes.rb:11:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:19 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 9.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/store.rb:9:in `users_total_price'
+app/models/store.rb:16:in `items_to_user_items'
+app/models/user.rb:14:in `block in results'
+app/models/user.rb:13:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:58 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:53:23 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 14.1ms)
+
+
