@@ -9,14 +9,17 @@ describe CategoriesController, type: :controller do
     end
   end
 
-  # describe "GET #show" do
-  # 	it "assigns the requested category to @category" do
-  #     get :show, params: { id: category.id }
-	 #    expect(assigns(:category)).to eq(category)
-	 #  end
-  # #   it "returns correct JSON" do 
-  # #     get :show, {id: category.id}, :format => :json
-  # #   end
-  # end
+  describe "GET #show" do
+
+  	it "assigns the requested category to @category" do
+      get :show, params: { id: category.id }
+	    expect(assigns(:category)).to eq(category)
+	  end
+
+    it "returns JSON" do 
+      get :show, params: { id: category.id }, :format => :json
+    end
+
+  end
 
 end
