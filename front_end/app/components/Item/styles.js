@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import colors from '../../config/colors';
 
+export const ADD_SIZE = 40;
 export default StyleSheet.create({
   row: {
     flexDirection: 'row',
@@ -9,12 +10,15 @@ export default StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 8,
     backgroundColor: colors.row,
-    marginVertical: 1,
+    marginVertical: 2,
   },
   image: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
+    // width: 40,
+    // height: 40,
+    // borderRadius: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
     marginRight: 10,
   },
   name: {
@@ -27,7 +31,14 @@ export default StyleSheet.create({
     color: colors.subtleText,
   },
   descriptionContainer: {
-    flex: 0.9,
+    flex: 1,
     flexWrap: 'wrap',
+  },
+  addContainer: {
+    flex: 0.2,
+    // backgroundColor: 'blue',
+  },
+  add: {
+    alignSelf: 'flex-end',
   },
 })
