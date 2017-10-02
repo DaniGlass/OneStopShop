@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :categories
+  resources :categories, only: [:index, :show,]
 
-  resources :user_items
+  resources :user_items, only: [:create, :show, :destroy]
 
   resources :stores
 
