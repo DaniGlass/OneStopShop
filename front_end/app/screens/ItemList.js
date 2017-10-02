@@ -23,7 +23,6 @@ class ItemList extends Component {
     const category = this.props.navigation.state.params;
     axios.get(`http://localhost:3000/categories/${category.id}`)
       .then(response => {
-        // console.log(response.data);
         this.setState({items: response.data})
       })
       .catch(error => {

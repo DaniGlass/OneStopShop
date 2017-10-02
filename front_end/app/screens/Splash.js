@@ -6,7 +6,7 @@ class Splash extends Component {
     return (
       <View
         style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Splash Screen</Text>
+        <Text>OneStopShop</Text>
       </View>
     );
   }
