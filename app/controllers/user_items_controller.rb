@@ -1,4 +1,8 @@
 class UserItemsController < ApplicationController
+	
+	require 'user_items_helper'
+	include ItemAddingValidation
+
   skip_before_action :verify_authenticity_token
 
 	def create
