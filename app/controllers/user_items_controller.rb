@@ -2,10 +2,6 @@ class UserItemsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
 	def create
-	  # user = User.find_by(params[:token])
-	  # p params[:user_items][:item_id].to_i
-	  # checked the route from add button and working fine.
-    # itemPressed = params[:item][:name]
     itemName = params[:item][:name]
     item = Item.find_by(name: itemName)
 	  userItem = UserItem.new
