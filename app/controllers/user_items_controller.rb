@@ -1,25 +1,28 @@
 class UserItemsController < ApplicationController
+
   skip_before_action :verify_authenticity_token
 
-	def create
+  def index
+    user = User.first
+    items = user.items
+    render json: items.to_json
+  end
+
+  def create
     itemName = params[:item][:name]
     item = Item.find_by(name: itemName)
-	  userItem = UserItem.new
+    userItem = UserItem.new
     userItem.user_id = User.first.id
     userItem.item_id = item.id
     userItem.save
 
     render json: userItem.to_json
-	end
-
-  def show
-  	# p "&" * 100
-  	# I need to check with Edgar how to call cunrrent_user
-  	# @item_list = current_user.items
   end
 
 	def destroy
-		p "*" * 100
+		@user_item = UserItem.find(params[:id])
+    @user_item.destroy
+
 	end
 
 end
