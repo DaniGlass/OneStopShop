@@ -74,21 +74,21 @@ export const categories = [
   {
     id: 11,
     name: "Baby",
-    image_url: "",
+    // image_url: "",
   },
   {
     id: 12,
     name: "Pets",
-    image_url: "",
+    // image_url: "",
   },
   {
     id: 13,
     name: "Office Supplies",
-    image_url: "",
+    // image_url: "",
   },
   {
     id: 14,
     name: "Electronics",
-    image_url: "",
+    // image_url: "",
   }
 ]

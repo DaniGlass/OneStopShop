@@ -16,11 +16,7 @@ class ItemList extends Component {
 
   componentDidMount() {
     const category = this.props.navigation.state.params;
-    axios.get(`http://localhost:3000/categories/${category.id}`, {
-      params: {
-        token: this.props.token
-      }
-    })
+    axios.get(`http://localhost:3000/categories/${category.id}`)
       .then(response => {
         console.log(response.data);
         this.setState({items: response.data})

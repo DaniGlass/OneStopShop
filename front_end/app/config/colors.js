@@ -5,4 +5,5 @@ export default {
   primaryText: '#641E16',
   subtleText: '#9a9a9a',
   rowUnderlay: 'rgba(154, 154, 154, 0.25)',
+  addIcon: '#7B241C',
 };

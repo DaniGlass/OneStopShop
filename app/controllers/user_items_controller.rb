@@ -4,7 +4,15 @@ class UserItemsController < ApplicationController
 	  # user = User.find_by(params[:token])
 	  # p params[:user_items][:item_id].to_i
 	  # checked the route from add button and working fine.
-	  UserItem.create(user_id: current_user.id, item_id: params[:user_items][:item_id].to_i)
+    itemPressed = params[:item]
+    itemName = itemPressed.name
+    item = Item.find_by(name: itemName)
+	  userItem = UserItem.new
+    userItem.user_id = current_user.id
+    userItem.item_id = item.id
+    userItem.save
+
+    render json: userItem.to_json
 	end
 
   def show
