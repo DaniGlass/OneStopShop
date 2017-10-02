@@ -30,7 +30,6 @@ class UserItemsController < ApplicationController
 		@user_item = UserItem.find(params[:id])
     @user_item.destroy
 
-    redirect_to categories_path
 	end
 
 end
