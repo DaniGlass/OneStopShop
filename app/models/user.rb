@@ -5,12 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :user_items
   has_many :items, through: :user_items
-<<<<<<< HEAD
   
   validates_uniqueness_of :user_name, scope: :item_id, message: "Cannot add same item more than once." 
-end
-=======
->>>>>>> 87d61a0ba62bc60ebd2697a0581f50d96b561095
 
   def find_stores
     # check all stores to see if they carry all the list
