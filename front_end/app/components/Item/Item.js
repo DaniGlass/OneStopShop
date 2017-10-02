@@ -1,28 +1,33 @@
 import React, {Component} from 'react';
 import { View, Text, Image, Platform, TouchableHighlight } from 'react-native';
+import axios from 'axios';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import colors from '../../config/colors';
 import styles, { ADD_SIZE } from './styles';
 
 class Item extends Component {
-
-  // componentDidMount(event) {
-  //   event.preventDefault();
-  //   axios.post('http://localhost:3000/user_items', {item: this.props.item})
-  //   .then(response => {
-  //     console.log(response);
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error);
-  //   });
+  // constructor() {
+  //   super(props);
+  //   (this: any).handleAddPress = this.handleAddPress.bind(this);
   // }
+
+  handleAddPress() {
+    axios.post('http://localhost:3000/user_items', {item: this.props.item})
+    .then(response => {
+      console.log(response);
+      this.props.getItems();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
 
   render() {
     const iconName = 'ios-add-circle-outline';
     return (
       <TouchableHighlight
-        onPress={this.props.onPress}
+        onPress={() => this.handleAddPress()}
         underlayColor={colors.rowUnderlay}
       >
         <View style={styles.row}>
