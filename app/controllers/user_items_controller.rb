@@ -1,4 +1,8 @@
 class UserItemsController < ApplicationController
+	
+	require 'user_items_helper'
+	include ItemAddingValidation
+
   skip_before_action :verify_authenticity_token
 
 	def create
@@ -23,7 +27,10 @@ class UserItemsController < ApplicationController
   end
 
 	def destroy
-		p "*" * 100
+		@user_item = UserItem.find(params[:id])
+    @user_item.destroy
+
+    redirect_to categories_path
 	end
 
 end

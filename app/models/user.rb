@@ -28,4 +28,16 @@ class User < ApplicationRecord
   def results
     self.get_prices_from_stores.sort_by { |store_name, total_price_per_store| total_price_per_store }[0..2]
   end
+
+
+  def results
+    results = []
+
+    Store.all.each do |store|
+      results.push(store.items_to_user_items(self.items))
+    end
+
+    results
+  end
+
 end

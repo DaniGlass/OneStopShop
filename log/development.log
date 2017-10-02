@@ -1,1198 +1,283 @@
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:02:36 -0700
-  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (22.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (43.5ms)
-Completed 200 OK in 155ms (Views: 29.5ms | ActiveRecord: 31.7ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:03:34 -0700
-Processing by CategoriesController#show as HTML
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:25:26 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (95.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (2.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-Completed 200 OK in 171ms (Views: 0.8ms | ActiveRecord: 101.8ms)
-
-
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:10:02 -0700
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (16.9ms)
-Completed 200 OK in 52ms (Views: 29.3ms | ActiveRecord: 5.2ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:10:04 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-Completed 200 OK in 70ms (Views: 0.2ms | ActiveRecord: 5.2ms)
-
-
-Started GET "/categories/4" for 127.0.0.1 at 2017-10-01 12:10:08 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"4"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 4]]
-Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:10:50 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.2ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:14:18 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  Rendered categories/show.html.erb within layouts/application (10.5ms)
-Completed 500 Internal Server Error in 84ms (ActiveRecord: 8.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.8ms)
 
 
   
-ActionView::Template::Error (undefined method `each' for #<String:0x007ff1140a87c0>):
-    1: <h1><%= @category.name %></h1>
-    2: 
-    3: <ul id="item-add-button">
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= button_to "Add", {:controller => "user_items"}  %>
+NoMethodError (undefined method `results' for #<User:0x007feb0e851f00>):
   
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336700008720'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:14:48 -0700
-Processing by CategoriesController#show as HTML
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:31:51 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (21.1ms)
-Completed 200 OK in 56ms (Views: 24.5ms | ActiveRecord: 7.5ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:15:16 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"authenticity_token"=>"PabRNwBDerO9GRn6jvegS+Cyt1cGHyd7m3A5yLKzUiSYuT4I99AOy4p9L31LOZgAw123PBNEr0AvRbONT1/HBA=="}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 159ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:18:36 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (191.3ms)
-Completed 500 Internal Server Error in 223ms (ActiveRecord: 8.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.1ms)
 
 
   
-ActionView::Template::Error (undefined method `item_path' for #<#<Class:0x007ff1158a01e8>:0x007ff115899aa0>):
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= form_for item do |f| %>
-    8: 
-    9: 		<% end %>
-   10: 	</li>
-  
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336712607700'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336712607700'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:18:59 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (342.4ms)
-Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined local variable or method `user_item' for #<#<Class:0x007ff1158a01e8>:0x007ff111682d10>
-Did you mean?  user_item_url):
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= form_for user_item do |f| %>
-    8: 
-    9: 		<% end %>
-   10: 	</li>
-  
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336677960880'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336677960880'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:20:16 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (328.6ms)
-Completed 500 Internal Server Error in 339ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined local variable or method `user_item' for #<#<Class:0x007ff1158a01e8>:0x007ff115952938>
-Did you mean?  user_item_url):
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= form_for user_item, url: user_items_path, method: :post do |f| %>
-    8: 
-    9: 		<% end %>
-   10: 	</li>
-  
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336712973140'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336712973140'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:20:45 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.6ms)
-Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:21:44 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.9ms)
-Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 0.6ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:22:01 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (24.9ms)
-Completed 200 OK in 61ms (Views: 28.8ms | ActiveRecord: 7.5ms)
-
-
-Started POST "/categories/1" for 127.0.0.1 at 2017-10-01 12:22:02 -0700
-  
-ActionController::RoutingError (No route matches [POST] "/categories/1"):
-  
-actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
-web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
-web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
-web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
-actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
-railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
-railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
-activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
-activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
-activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
-railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
-actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
-rack (2.0.3) lib/rack/method_override.rb:22:in `call'
-rack (2.0.3) lib/rack/runtime.rb:22:in `call'
-activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
-actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
-actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
-rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
-rack-cors (1.0.1) lib/rack/cors.rb:93:in `call'
-railties (5.1.4) lib/rails/engine.rb:522:in `call'
-puma (3.10.0) lib/puma/configuration.rb:225:in `call'
-puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
-puma (3.10.0) lib/puma/server.rb:437:in `process_client'
-puma (3.10.0) lib/puma/server.rb:301:in `block in run'
-puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:23:04 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:23:06 -0700
-  
-SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/controllers/user_items_controller.rb:30: syntax error, unexpected end-of-input, expecting keyword_end
-# <% end %>
-           ^):
-  
-app/controllers/user_items_controller.rb:30: syntax error, unexpected end-of-input, expecting keyword_end
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:23:43 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (24.3ms)
-Completed 200 OK in 68ms (Views: 35.1ms | ActiveRecord: 7.5ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:23:45 -0700
-  
-ActionController::RoutingError (undefined local variable or method `ends' for UserItemsController:Class):
-  
-app/controllers/user_items_controller.rb:15:in `<class:UserItemsController>'
-app/controllers/user_items_controller.rb:1:in `<top (required)>'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:24:12 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (25.3ms)
-Completed 200 OK in 65ms (Views: 29.5ms | ActiveRecord: 8.4ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:24:13 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9APhMFQ8CoM5nJkEt8hU8G2xnGai3Kzb/9DRSrwMOylRHA4Po69++w74r4NyBmy7Tl6cDbeHJOBL5VsPQeCuCQ==", "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 153ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:25:41 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  Rendered categories/show.html.erb within layouts/application (1.0ms)
-Completed 500 Internal Server Error in 46ms (ActiveRecord: 4.3ms)
-
-
-  
-SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
-uffer.append=( f.hidden, name: "item_id", value: item.id );@
-                              ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:8: syntax error, unexpected ',', expecting ')'
-d=( f.hidden, name: "item_id", value: item.id );@output_buff
-                              ^):
-  
-app/views/categories/show.html.erb:8: syntax error, unexpected tLABEL, expecting '='
-app/views/categories/show.html.erb:8: syntax error, unexpected ',', expecting ')'
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:26:13 -0700
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.3ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:26:15 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (26.1ms)
-Completed 200 OK in 41ms (Views: 31.3ms | ActiveRecord: 4.4ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:26:16 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zwWJC62XfBa7XkIZJltazMj0HHPSI6W1IzbbOoGOdABqGmY0WgQIbow6dJ7jlWKH6xscGMd4LY6XA1F/fGLhIA==", "http://localhost:3000/user_items/1"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 148ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:26:56 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (29.8ms)
-Completed 200 OK in 78ms (Views: 35.0ms | ActiveRecord: 7.8ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:26:58 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dXcYPYrYVHsJtWEhD95paz43W6PLk//h4Dzn3iUhXj/QaPcCfUsgAz7RV6bKEFEgHdhbyN7Id9pUCW2b2M3LHw==", "http://localhost:3000/user_items/1"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 150ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:27:57 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.3ms)
-Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:27:59 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4jjGqqqR1Y3lRWYiOCkHf+mfve2QDm4AcI9A8Mg2Kr5HJymVXQKh9dIhUKX95z80ynC9hoVV5jvEusq1Ndq/ng==", "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 162ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:29:08 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (13.8ms)
-Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:29:09 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dzI+m5EsrXqEwvApoYCSuRAKWeKKlmdh+NTAmACu5xbSLdGkZr/ZArOmxq5kTqryM+VZiZ/N71pM4Urd/UJyNg==", "http://localhost:3000/user_items/1"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 161ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:29:37 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (26.0ms)
-Completed 200 OK in 61ms (Views: 30.2ms | ActiveRecord: 7.3ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:29:38 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rFn7Uq1l1MLQ1HrAY84Cr+Ey65McUraZBYpu7DQG3IEJRhRtWvaguuewTEemADrkwt3r+AkJPqKxv+SpyepJoQ==", "http://localhost:3000/user_items/1"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 154ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:30:07 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (25.3ms)
-Completed 200 OK in 60ms (Views: 28.6ms | ActiveRecord: 9.0ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:30:11 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yrf1k6cK+6SPdWJ1Hx0vfMlyvtOq89IC6XRVhbRRuZPHqBqsUJmP3LgRVPLa0xc36p2+uL+oWjldQd/ASb0ssw==", "http://localhost:3000/user_items/1"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 159ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:31:34 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (34.8ms)
-Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.7ms)
-
-
-  
-ActionView::Template::Error (undefined method `{:name=>"item_id", :value=>1}' for #<Item:0x007ff115a8ec98>):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for item, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field name: "item_id", value: item.id %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336688114320'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336688114320'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336688114320'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:32:06 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (4.6ms)
-Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:32:08 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/nw5J3CJnyxQxT+bwOE/KZ5pW9yUGPdsYW5LynQzYQVbY9YYhxrrVGehCRwFLwdivYZbt4FDf1fVW8GPid/0JQ==", "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 156ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:32:53 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (28.0ms)
-Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.7ms)
-
-
-  
-ActionView::Template::Error (undefined method `{:name=>"item_id"}' for #<Item:0x007ff115ccb790>):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for item, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field name: "item_id" %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336714855880'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336714855880'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336714855880'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:33:30 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (25.5ms)
-Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined method `{:name=>"item_id"}' for #<Item:0x007ff115dcb938>):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for item, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(name: "item_id") %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336715380960'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336715380960'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336715380960'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:34:11 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (10.6ms)
-Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (First argument in form cannot contain nil or be empty):
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= form_for @categories, url: user_items_path, method: :post do |f| %>
-    8: 
-    9: 			<%= f.submit "Add" %>
-   10: 		<% end %>
-  
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336679814880'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336679814880'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:34:33 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (4.7ms)
-Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:34:36 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b9HwVmxQ60DL7WJVVVsp0jfFtQa1xZBWv3DHOqMHZp7Kzh9pm8OfOPyJVNKQlRGZFCq1baCeGG0LRU1/Xuvzvg==", "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 155ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:35:07 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (22.6ms)
-Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.7ms)
-
-
-  
-ActionView::Template::Error (undefined method `{:name=>"item_id"}' for #<Category:0x007ff111e90ae8>):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for @category, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(name: "item_id") %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336682153720'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336682153720'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336682153720'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:35:34 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (10.9ms)
-Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined method `to_key' for #<Item::ActiveRecord_Associations_CollectionProxy:0x007ff1141f96b0>
-Did you mean?  to_set
-               to_ary):
-    4: <% @items.each do |item| %>
-    5: 	<li>
-    6: 		<%= item.name %>
-    7: 		<%= form_for @items, url: user_items_path, method: :post do |f| %>
-    8: 			<%= f.hidden_field(name: "item_id") %>
-    9: 			<%= f.submit "Add" %>
-   10: 		<% end %>
-  
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336700715500'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336700715500'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:36:07 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.5ms)
-Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:36:09 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AnvfyiwA630Xfl9EsAZIYk6nrpnvQkTGk3lM69U21lSnZDD125OfBSAaacN1yHApbUiu8voZzP0nTMauKNpDdA==", "user_items"=>{"{:name=>\"item_id\"}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 156ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:36:45 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  Rendered categories/show.html.erb within layouts/application (1.1ms)
-Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms)
-
-
-  
-SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
-en_field(name: "item_id" value: item.id) );@output_buffer.sa
-                              ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:8: syntax error, unexpected ')', expecting keyword_end
-e: "item_id" value: item.id) );@output_buffer.safe_append='
-                              ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
-          ensure
-                ^):
-  
-app/views/categories/show.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
-app/views/categories/show.html.erb:8: syntax error, unexpected ')', expecting keyword_end
-app/views/categories/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting end-of-input
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:37:06 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (4.9ms)
-Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:37:11 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MdGhe8y4AXL76r7olf9c0Fok68vYTQwMeTbDaeIZ6AmUzk5EOyt1CsyOiG9QMWSbecvroM0WhDfNA0ksH/V9KQ==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 157ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:37:45 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (22.8ms)
-Completed 200 OK in 61ms (Views: 28.9ms | ActiveRecord: 8.0ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:37:47 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jUY2Q5udNXWj/k1FHsZ3dtgjJcx41/FK+Tk98U6igmYoWdl8bA5BDZSae8LbCE89+8wlp22MeXFNDLe0s04XRg==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 162ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:38:08 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (24.8ms)
-Completed 200 OK in 57ms (Views: 27.9ms | ActiveRecord: 7.8ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:38:09 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B2j4GyJrUMo+HYux5FvxQVknNSgVaxc1Lt2AVohVuVyidxck1fgksgl5vTYhlckKesg1QwAwnw6a6AoTdbksfA==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 164ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:39:07 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (23.0ms)
-Completed 200 OK in 60ms (Views: 27.8ms | ActiveRecord: 7.5ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:39:08 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OzNwtTZEpJCsibIuoPJQvofK54Wvxqdfah01Wg330IGeLJ+KwdfQ6JvthKllPGj1pCXn7rqdL2TeKL8f8BtFoQ==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 156ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:39:42 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (31.6ms)
-Completed 200 OK in 66ms (Views: 35.6ms | ActiveRecord: 7.9ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:39:43 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XselWirRcliB2Dkce7zuibf0IbzNTBOc7eCVA5xOsTP72Epl3UIGILa8D5u+ctbClBsh19gXm6dZ1R9GYaIkEw==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 162ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:40:47 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (25.0ms)
-Completed 200 OK in 59ms (Views: 28.6ms | ActiveRecord: 8.2ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:40:48 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CUmyg5Qw0x1DgaKW3XxHENA9UOMWxozqhgjPz/PB5UCsVl28Y6OnZXTllBEYsn9b89JQiAOdBNEyPUWKDi1wYA==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 165ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:41:10 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (24.8ms)
-Completed 200 OK in 60ms (Views: 27.6ms | ActiveRecord: 9.2ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:41:11 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jwzhGiKmilcHCNwGf1WcBowUH4dd49/Ba4O9JC/OYs0qEw4l1TX+LzBs6oG6m6RNr/sf7Ei4V/rftjdh0iL37Q==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 163ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:41:35 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (23.1ms)
-Completed 200 OK in 63ms (Views: 30.8ms | ActiveRecord: 7.8ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:41:36 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LDGcF2bmHC6W9L+z2cr/MkAYEan8Ov6uA+QT64LJDpuJLnMokXVoVqGQiTQcBMd5Y/cRwulhdpW30ZmufyWbuw==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `length' for #<ActionController::Parameters:0x007ff115bd8f18>):
-  
-app/controllers/user_items_controller.rb:5:in `create'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:41:53 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (27.3ms)
-Completed 200 OK in 76ms (Views: 35.8ms | ActiveRecord: 8.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:41:54 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BmozHXQYIihHnUCOobWhVuJi/Y4RE9acFJs9KpWw77Gjddwig4tWUHD5dglke5kdwY395QRIXqegrrdvaFx6kQ==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
-
-
-  
-NoMethodError (undefined method `count' for #<ActionController::Parameters:0x007ff115c926c0>):
-  
-app/controllers/user_items_controller.rb:5:in `create'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:42:17 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (36.9ms)
-Completed 200 OK in 74ms (Views: 40.8ms | ActiveRecord: 8.5ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:42:18 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4udDpd5uFcVXYGPws+SztieT0M5Z4r8SF0BdIUfWzqBH+KyaKf1hvWAEVXd2Kov9BHzQpUy5NymjdddkujpbgA==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 153ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:42:30 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (24.0ms)
-Completed 200 OK in 57ms (Views: 27.1ms | ActiveRecord: 8.7ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:42:30 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gnCk6EP9BX1lDj4Z9QegNnD33o0bRatngOTiOrg+Zx0nb0vXtG5xBVJqCJ4wyZh9Uxje5g4eI1w00Wh/RdLyPQ==", "user_items"=>{"{:name=>\"item_id\", :value=>1}"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 153ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:44:32 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (6.9ms)
-Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms)
-
-
-  
-ActionView::Template::Error (undefined method `merge' for :id:Symbol):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(:item, :id) %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336701334320'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336701334320'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336701334320'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:44:59 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.4ms)
-Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.7ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:45:01 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NcW2st9ZRUCRqKCoofr1XWFu2NiHT5jUGetBsz41E5iQ2lmNKMoxOKbMli9kNM0WQoHYs5IUEO+t3sv2w9mGuA==", "user_items"=>{"item"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 165ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:45:25 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (6.6ms)
-Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
-
-
-  
-ActionView::Template::Error (undefined method `merge' for :id:Symbol):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(:item, :id) %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336682377560'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336682377560'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336682377560'
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:45:33 -0700
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (4.3ms)
-Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:45:34 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (8.3ms)
-Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
-
-
-  
-ActionView::Template::Error (undefined method `merge' for :id:Symbol):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(:item, :id) %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
-  
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336715262940'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336715262940'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336715262940'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:46:25 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.0ms)
-Completed 200 OK in 19ms (Views: 14.1ms | ActiveRecord: 0.6ms)
-
-
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:46:26 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bUWZQ0FCRUVPQapqj/oK23oE5xCx0fJ2TE5B4IwBVE/IWnZ8ttExPXglnO1KNDKQWevne6SKek34e8ulce3Bbw==", "user_items"=>{"item"=>""}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 159ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:46:45 -0700
-Processing by CategoriesController#show as HTML
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  Rendered categories/show.html.erb within layouts/application (1.3ms)
-Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
-
-
-  
-SyntaxError (/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:8: syntax error, unexpected ',', expecting ')'
-fer.append=( f.hidden_field( ,:item, ) );@output_buffer.safe
-                              ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
-'.freeze;		 end 
-         		    ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
-'.freeze; end 
-             ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
-          ensure
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+    [{self.name: {total_price: total_price, n...
                 ^
-/Users/Ikuko/Desktop/OneStopShop/app/views/categories/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
-          end
-             ^):
+/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+...d_count: missing_items.count} }]
+...                               ^):
   
-app/views/categories/show.html.erb:8: syntax error, unexpected ',', expecting ')'
-app/views/categories/show.html.erb:10: syntax error, unexpected keyword_end, expecting ')'
-app/views/categories/show.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
-app/views/categories/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
-app/views/categories/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:47:13 -0700
-Processing by CategoriesController#show as HTML
+app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+app/models/user.rb:11:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:32:37 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.8ms)
-Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.2ms)
 
 
   
-ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field( :item ,:item, :id) %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+    {self.name: {total_price: total_price, n...
+               ^
+/Users/edgarbarajas/OneStopShop/app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end):
   
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336701203200'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336701203200'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336701203200'
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:48:41 -0700
-Processing by CategoriesController#show as HTML
+app/models/store.rb:13: syntax error, unexpected ':', expecting =>
+app/models/store.rb:13: syntax error, unexpected '}', expecting keyword_end
+app/models/user.rb:11:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:33:59 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (9.2ms)
-Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.4ms)[0m  [1m[34mSELECT  "stores".* FROM "stores" ORDER BY "stores"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:35:31 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:36:21 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:38:37 -0700
+Processing by ResultsController#index as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 4.0ms)
 
 
   
-ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
-     5: 	<li>
-     6: 		<%= item.name %>
-     7: 		<%= form_for :user_items, url: user_items_path, method: :post do |f| %>
-     8: 			<%= f.hidden_field(:item, :item_id, :value => params[:id]) %>
-     9: 			<%= f.submit "Add" %>
-    10: 		<% end %>
-    11: 	</li>
+NameError (undefined local variable or method `user_list' for #<Store:0x007feb120a1d88>):
   
-app/views/categories/show.html.erb:8:in `block (2 levels) in _app_views_categories_show_html_erb__4595303389771315641_70336714214960'
-app/views/categories/show.html.erb:7:in `block in _app_views_categories_show_html_erb__4595303389771315641_70336714214960'
-app/views/categories/show.html.erb:4:in `_app_views_categories_show_html_erb__4595303389771315641_70336714214960'
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:49:30 -0700
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (4.0ms)
-Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.4ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:49:31 -0700
-Processing by CategoriesController#show as HTML
+app/models/store.rb:6:in `find_users_missing_items'
+app/models/store.rb:10:in `items_to_user_items'
+app/models/user.rb:14:in `block in results'
+app/models/user.rb:13:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:39:12 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.7ms)
-Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 17.0ms)
 
 
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:49:32 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SnBH3rHTNpj1kqyYpHoPOpzZ+WktX607BzpaQMfTr9fvb6jhRkBC4ML2mh9htDdxvzb5AjgEJQCzD9AFOj869w==", "user_items"=>{"item_id"=>"1"}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 155ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:51:38 -0700
-Processing by CategoriesController#show as HTML
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:40:25 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (23.6ms)
-Completed 200 OK in 58ms (Views: 27.2ms | ActiveRecord: 8.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 29ms (Views: 0.1ms | ActiveRecord: 6.9ms)
 
 
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:51:39 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cSPk8kBr66uFdzwF9hRg+SGEsb2KMU1JHEViUTnivuLUPAvNt/if07ITCoIz2liyAmux1p9qxXKocOgUxA4rwg==", "user_items"=>{"item_id"=>"1"}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 153ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:51:53 -0700
-Processing by CategoriesController#show as HTML
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:45:32 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (26.2ms)
-Completed 200 OK in 63ms (Views: 30.8ms | ActiveRecord: 8.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 15.8ms)
 
 
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:51:54 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"go7ZoVeMjrdYsTRHnUr5GMJwI3D3FEC2Y2S0nLqsZf0nkTaeoB/6z2/VAsBYhMFT4Z8jG+JPyI3XUT7ZR0Dw3Q==", "user_items"=>{"item_id"=>"1"}, "commit"=>"Add"}
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 157ms (ActiveRecord: 0.0ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:52:41 -0700
-Processing by CategoriesController#show as HTML
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:09 -0700
+  
+SyntaxError (/Users/edgarbarajas/OneStopShop/app/models/user.rb:14: syntax error, unexpected ')', expecting keyword_end):
+  
+app/models/user.rb:14: syntax error, unexpected ')', expecting keyword_end
+config/routes.rb:11:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:19 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (34.5ms)
-Completed 200 OK in 70ms (Views: 38.0ms | ActiveRecord: 8.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 9.1ms)
 
 
-Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-01 12:52:44 -0700
-Processing by Devise::SessionsController#new as HTML
-  Rendering devise/sessions/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (1.9ms)
-  Rendered devise/sessions/new.html.erb within layouts/application (53.5ms)
-Completed 200 OK in 93ms (Views: 66.7ms | ActiveRecord: 3.8ms)
-
-
-Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-01 12:52:52 -0700
-Processing by Devise::RegistrationsController#new as HTML
-  Rendering devise/registrations/new.html.erb within layouts/application
-  Rendered devise/shared/_links.html.erb (1.4ms)
-  Rendered devise/registrations/new.html.erb within layouts/application (6.9ms)
-Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.0ms)
-
-
-Started POST "/users" for 127.0.0.1 at 2017-10-01 12:53:11 -0700
-Processing by Devise::RegistrationsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D2W5dilcXyGXaHOLCSpbzOvuIncTpTQml/aftBhQsl9p3Jk4MHqw/ClnH+VQBGChC96tpddBY6TCG/7AWEu1CA==", "user"=>{"name"=>"Edgar", "email"=>"edgar@edgar.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mUser Exists (18.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "edgar@edgar.com"], ["LIMIT", 1]]
-  [1m[35mSQL (18.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Edgar"], ["created_at", "2017-10-01 19:53:12.044206"], ["updated_at", "2017-10-01 19:53:12.044206"], ["email", "edgar@edgar.com"], ["encrypted_password", "$2a$11$qh1S8ZMtl8bYeqe28ZOYYO2Jx9Bu3y/1Yt8SRb3pA/Wb7za11OPgS"]]
-  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
-  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
-  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2017-10-01 19:53:12.067733"], ["sign_in_count", 1], ["current_sign_in_at", "2017-10-01 19:53:12.066838"], ["last_sign_in_at", "2017-10-01 19:53:12.066838"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["id", 2]]
-  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
-Redirected to http://localhost:3000/
-Completed 302 Found in 342ms (ActiveRecord: 39.8ms)
-
-
-Started GET "/" for 127.0.0.1 at 2017-10-01 12:53:12 -0700
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (3.7ms)
-  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-Completed 200 OK in 20ms (Views: 14.6ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2017-10-01 12:53:14 -0700
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering users/show.html.erb within layouts/application
-  Rendered users/show.html.erb within layouts/application (1.2ms)
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-Completed 200 OK in 19ms (Views: 11.9ms | ActiveRecord: 1.1ms)
-
-
-Started GET "/users/edit" for 127.0.0.1 at 2017-10-01 12:53:17 -0700
-Processing by Devise::RegistrationsController#edit as HTML
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering devise/registrations/edit.html.erb within layouts/application
-  Rendered devise/registrations/edit.html.erb within layouts/application (6.4ms)
-Completed 200 OK in 25ms (Views: 20.1ms | ActiveRecord: 0.7ms)
-
-
-Started GET "/users/2" for 127.0.0.1 at 2017-10-01 12:53:22 -0700
-Processing by UsersController#show as HTML
-  Parameters: {"id"=>"2"}
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  Rendering users/show.html.erb within layouts/application
-  Rendered users/show.html.erb within layouts/application (0.9ms)
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-Completed 200 OK in 17ms (Views: 10.8ms | ActiveRecord: 1.0ms)
-
-
-Started GET "/categories" for 127.0.0.1 at 2017-10-01 12:53:31 -0700
-Processing by CategoriesController#index as HTML
-  Rendering categories/index.html.erb within layouts/application
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-  Rendered categories/index.html.erb within layouts/application (3.4ms)
-  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.8ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-01 12:53:36 -0700
-Processing by CategoriesController#show as HTML
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/store.rb:9:in `users_total_price'
+app/models/store.rb:16:in `items_to_user_items'
+app/models/user.rb:14:in `block in results'
+app/models/user.rb:13:in `results'
+app/controllers/results_controller.rb:5:in `index'
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:52:58 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  Rendering categories/show.html.erb within layouts/application
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-  Rendered categories/show.html.erb within layouts/application (5.6ms)
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-Completed 200 OK in 23ms (Views: 16.2ms | ActiveRecord: 1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.3ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 69ms (Views: 0.1ms | ActiveRecord: 14.2ms)
 
 
-Started POST "/user_items" for 127.0.0.1 at 2017-10-01 12:53:41 -0700
-Processing by UserItemsController#create as HTML
-  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLZIlP7n/qVGuN96Age1vbDwK30seF1XMBEhW4GjI0cxqaerCXSK3XHc6f3HyY32kx8rFjkj1WyEJKsefE+2Zw==", "user_items"=>{"item_id"=>"1"}, "commit"=>"Add"}
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
-  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[35mSQL (80.2ms)[0m  [1m[32mINSERT INTO "user_items" ("user_id", "item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 2], ["item_id", 1], ["created_at", "2017-10-01 19:53:41.155648"], ["updated_at", "2017-10-01 19:53:41.155648"]]
-  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
-No template found for UserItemsController#create, rendering head :no_content
-Completed 204 No Content in 264ms (ActiveRecord: 86.2ms)
-
-
-  [1m[36mUserItem Load (0.6ms)[0m  [1m[34mSELECT  "user_items".* FROM "user_items" LIMIT $1[0m  [["LIMIT", 11]]
-  [1m[36mUserItem Load (0.4ms)[0m  [1m[34mSELECT  "user_items".* FROM "user_items" ORDER BY "user_items"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 11]]
-  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" LIMIT $1[0m  [["LIMIT", 11]]
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
-  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
-  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ikko@ikko"], ["LIMIT", 1]]
-  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ikuko"], ["created_at", "2017-10-02 04:26:52.172108"], ["updated_at", "2017-10-02 04:26:52.172108"], ["email", "ikko@ikko"], ["encrypted_password", "$2a$11$AzgX/Ybqisq12OMdj8zJ1OtdOBOm9yk9STgOdkN2.OkiVK5Wf3KU2"]]
-  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
-Started GET "/" for 127.0.0.1 at 2017-10-02 09:25:58 -0700
-  [1m[35m (9.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by CategoriesController#index as HTML
-  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-Completed 200 OK in 60ms (Views: 12.2ms | ActiveRecord: 28.8ms)
-
-
-Started GET "/categories/1" for 127.0.0.1 at 2017-10-02 09:26:03 -0700
-Processing by CategoriesController#show as HTML
+Started GET "/users/1/results" for 127.0.0.1 at 2017-10-02 11:53:23 -0700
+Processing by ResultsController#index as HTML
   Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (34.0ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-Completed 200 OK in 95ms (Views: 0.2ms | ActiveRecord: 40.7ms)
-
-
-Started GET "/categories/1.json" for 127.0.0.1 at 2017-10-02 09:26:20 -0700
-Processing by CategoriesController#show as JSON
-  Parameters: {"id"=>"1"}
-  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
-  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
-Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStore Load (0.2ms)[0m  [1m[34mSELECT "stores".* FROM "stores"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 1[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 2[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 3[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 4[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 5[0m  [["user_id", 1]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "items"."name" FROM "items" INNER JOIN "store_prices" ON "items"."id" = "store_prices"."item_id" WHERE "store_prices"."store_id" = $1[0m  [["store_id", 6]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "store_prices"."price" FROM "store_prices" WHERE "store_prices"."item_id" IN (SELECT "items"."id" FROM "items" INNER JOIN "user_items" ON "items"."id" = "user_items"."item_id" WHERE "user_items"."user_id" = $1) AND "store_prices"."store_id" = 6[0m  [["user_id", 1]]
+Completed 200 OK in 72ms (Views: 0.1ms | ActiveRecord: 14.1ms)
 
 
   [1m[36mUser Load (94.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
