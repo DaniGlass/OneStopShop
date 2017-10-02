@@ -1,7 +1,7 @@
-import ItemList from './ItemList';
+import Item from './Item';
 import styles from './styles';
 
 export {
-  ItemList,
+  Item,
   styles,
 };
