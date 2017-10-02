@@ -8,16 +8,13 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 8,
+    backgroundColor: colors.row,
+    marginVertical: 1,
   },
-  // name: {
-    // somthing
-  // },
-
-  // brand: {
-    // something
-  // },
-
-  // image: {
-    // something
-  // },
+  image: {
+    width: 40,
+    height: 40,
+    borderRadius: 2,
+    marginRight: 10,
+  },
 })
