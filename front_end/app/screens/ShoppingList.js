@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { View, Text, ScrollView, Button } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
+import { Button } from 'native-base';
 import axios from 'axios';
 
 import colors from '../config/colors';
@@ -43,14 +44,9 @@ class ShoppingList extends Component {
             <UserItem user_item={userItem} getUserItems={this.getUserItems} key={idx} />
           ))}
         </ScrollView>
-        <Button
-          onPress={() => this.handleButtonPress()}
-          title="Find Yo' Stop!"
-          color={colors.buttonText}
-          backgroundColor={colors.buttonBackground}
-          accessibilityLabel="Find Your Stop for One Stop Shopping"
-          style={{height: 600}}
-        />
+        <Button full onPress={() => this.handleButtonPress()}>
+          <Text>Find Yo' Stop!</Text>
+        </Button>
       </View>
     );
   }
