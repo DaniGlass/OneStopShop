@@ -9,10 +9,14 @@ class User < ApplicationRecord
     results = {}
 
     Store.all.each do |store|
-      results[store.name] = {total_price: store.users_total_price(self.items), not_found_names: store.find_users_missing_items(self.items), not_found_count: store.find_users_missing_items(self.items).count, closest_store: store.closest_store_from_user_location["name"]}
+      results[store.name] = {total_price: store.users_total_price(self.items), not_found_names: store.find_users_missing_items(self.items), not_found_count: store.find_users_missing_items(self.items).count, closest_store: store.closest_store_from_user_location}
     end
 
     results
+  end
+
+  def results_by_shortest_distance
+    self.results
   end
 
 end
