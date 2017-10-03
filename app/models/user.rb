@@ -27,4 +27,11 @@ class User < ApplicationRecord
     end
   end
 
+  def results_by_items_found
+    self.results.sort_by do |store, details|
+      details[:not_found_count]
+    end
+  end
+
+
 end

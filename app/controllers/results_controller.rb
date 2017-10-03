@@ -2,14 +2,8 @@ class ResultsController < ApplicationController
   def index
     user = User.find(params[:id])
 
-    render json: user.results.to_json
+    render json: user.results_by_items_found.to_json
 
-  end
-
-  def by_items_found
-    user = User.find(params[:id])
-
-    render json: user.results.to_json
   end
 
   def by_lowest_price
