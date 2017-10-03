@@ -15,7 +15,7 @@ class StoreResults extends Component {
         />
         <View style={styles.descriptionContainer}>
           <Text style={styles.name}>{this.props.store[1].closest_store.name}</Text>
-          <Text style={styles.name}>{this.props.store[1].closest_store.name}</Text>
+          <Text style={styles.description}>{this.props.store[1].closest_store.location.display_address}</Text>
         </View>
       </View>
     );

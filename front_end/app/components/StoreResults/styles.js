@@ -17,4 +17,17 @@ export default StyleSheet.create({
     borderRadius: 30,
     marginRight: 10,
   },
+  name: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: colors.primaryText,
+  },
+  description: {
+    fontSize: 13,
+    color: colors.subtleText,
+  },
+  descriptionContainer: {
+    flex: 1,
+    flexWrap: 'wrap',
+  },
 })
