@@ -11,7 +11,7 @@ class Store < ApplicationRecord
   end
 
   def users_total_price(user_list)
-    StorePrice.where(item: user_list, store: self).pluck(:price).reduce(:+).round(2)
+    '%.2f' % (StorePrice.where(item: user_list, store: self).pluck(:price).reduce(:+).round(2))
   end
 
   def closest_store_from_user_location
