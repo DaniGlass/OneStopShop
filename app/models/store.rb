@@ -10,13 +10,8 @@ class Store < ApplicationRecord
     StorePrice.where(item: user_list, store: self).pluck(:price).reduce(:+)
   end
 
-  def items_to_user_items(user_list)
-    missing_items = find_users_missing_items(user_list)
-
-    total_price = users_total_price(user_list)
-
-    {self.name => {total_price: total_price, not_found_names: missing_items, not_found_count: missing_items.count} }
-
+  def closest_store_from_user_location
+    YelpAdapter.search(self.name)["businesses"].sort_by { |rest| rest["distance"] }.first
   end
 
 end

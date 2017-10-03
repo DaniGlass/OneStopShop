@@ -4,38 +4,19 @@ class User < ApplicationRecord
   has_many :user_items
   has_many :items, through: :user_items
 
-  def find_stores
-    # check all stores to see if they carry all the list
-    Store.all.select do |store|
-      store.has_all_of_users_list?(self.items)
-    end
-  end
-
-  def get_prices_from_stores
-    stores_where_list_is_available = self.find_stores
-
-    store_prices = {}
-
-    stores_where_list_is_available.each do |store|
-      store_prices[store.name] = StorePrice.where(item: self.items, store: store).pluck(:price).reduce(:+)
-    end
-
-    store_prices
-  end
 
   def results
-    self.get_prices_from_stores.sort_by { |store_name, total_price_per_store| total_price_per_store }[0..2]
-  end
-
-
-  def results
-    results = []
+    results = {}
 
     Store.all.each do |store|
-      results.push(store.items_to_user_items(self.items))
+      results[store.name] = {total_price: store.users_total_price(self.items), not_found_names: store.find_users_missing_items(self.items), not_found_count: store.find_users_missing_items(self.items).count, closest_store: store.closest_store_from_user_location}
     end
 
     results
+  end
+
+  def results_by_shortest_distance
+    self.results
   end
 
 end
