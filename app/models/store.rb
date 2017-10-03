@@ -6,6 +6,10 @@ class Store < ApplicationRecord
     user_list.pluck(:name) - self.items.pluck(:name)
   end
 
+  def users_items_found_count(user_list)
+    user_list.count - self.find_users_missing_items(user_list).count
+  end
+
   def users_total_price(user_list)
     StorePrice.where(item: user_list, store: self).pluck(:price).reduce(:+).round(2)
   end
