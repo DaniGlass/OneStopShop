@@ -5,7 +5,6 @@ import colors from '../../config/colors';
 export default StyleSheet.create({
   row: {
     flexDirection: 'row',
-    alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 8,
     backgroundColor: colors.row,
@@ -30,4 +29,8 @@ export default StyleSheet.create({
     flex: 1,
     flexWrap: 'wrap',
   },
+  itemsResults: {
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+  }
 })

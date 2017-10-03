@@ -5,6 +5,7 @@ import axios from 'axios';
 import colors from '../config/colors';
 import { UserItem } from '../components/UserItem';
 
+
 class ShoppingList extends Component {
 
   constructor(props) {
@@ -48,6 +49,7 @@ class ShoppingList extends Component {
           color={colors.buttonText}
           backgroundColor={colors.buttonBackground}
           accessibilityLabel="Find Your Stop for One Stop Shopping"
+          style={{height: 600}}
         />
       </View>
     );
