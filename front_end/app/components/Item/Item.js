@@ -13,6 +13,10 @@ class Item extends Component {
   // }
 
   handleAddPress() {
+    this.createUserItem();
+  }
+
+  createUserItem() {
     axios.post('http://localhost:3000/user_items', {item: this.props.item})
     .then(response => {
       console.log(response);
