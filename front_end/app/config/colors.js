@@ -9,4 +9,6 @@ export default {
   labelColor: 'white',
   navTabBackground: '#37474F',
   icon: '#7B241C',
+  buttonText: '#7B241C',
+  buttonBackground: '#9a9a9a',
 };

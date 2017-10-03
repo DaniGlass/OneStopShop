@@ -28,7 +28,7 @@ const StackNav = StackNavigator({
   PickStop: {
     screen: PickStop,
     navigationOptions: {
-      title: 'Your Stops',
+      title: 'Your Possible Stops',
     },
   },
 });

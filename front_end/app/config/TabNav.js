@@ -3,6 +3,7 @@ import { TabNavigator, TabView } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import StackNav from './StackNav';
 import ShoppingList from '../screens/ShoppingList';
+import PickStop from '../screens/PickStop';
 
 import colors from './colors';
 
