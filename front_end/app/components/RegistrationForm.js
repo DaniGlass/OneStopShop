@@ -24,7 +24,7 @@ class RegistrationForm extends Component {
     const { username, email, password } = this.state;
     const { navigate } = this.props.navigation;
 
-    axios.post('https://shrouded-plateau-80705.herokuapp.com/api/users', { username, email, password })
+    axios.post('http://localhost:3000/api/users', { username, email, password })
       .then(response => {
         if (response.data.status === 'SUCCESS') {
           navigate('Map', { accessToken: response.data.accessToken });

@@ -11,10 +11,6 @@ Rails.application.routes.draw do
 
   resources :stores
 
-  resources :users, only: [:new, :create, :show, :delete]
-
-  post 'authenticate', to: 'authentication#authenticate'
-
   get "users/:id/results" => 'results#index'
   get "users/:id/results/by_items_found" => 'results#by_items_found'
   get "users/:id/results/by_price" => 'results#by_lowest_price'
@@ -22,4 +18,22 @@ Rails.application.routes.draw do
 
 	root 'categories#index'
 
+
+  delete '/logout'  => 'sessions#destroy'
+
+  namespace :api do
+
+    post   '/login'   => 'sessions#create'
+    get    '/verify'  => 'sessions#verify_access_token'
+
+    resources :users, only: [:create, :show, :update, :destroy]
+
+    resources :password_resets, only: [:create, :update]
+  end
+
+
 end
+
+
+
+

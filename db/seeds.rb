@@ -3,7 +3,7 @@
 # Store.destroy
 # StorePrice.destroy
 
-User.create(name: "Jen", email: "jen@jen.com", password: "123456")
+User.create(username: "Jen", email: "jen@jen.com", password: "123456")
 
 Category.create([{name: "Meat, Poultry, & Fish"}, {name: "Produce"}, {name: "Dairy & Eggs"}, {name: "Frozen Food"}, {name: "Beverages"}, {name: "Adult Beverages"}, {name: "Snacks & Candy"}, {name: "Beauty"}, {name: "Healthcare"}, {name: "Home"}, {name: "Baby"}, {name: "Pets"}, {name: "Office Supplies"}, {name: "Electronics"}])
 

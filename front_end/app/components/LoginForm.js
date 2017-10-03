@@ -22,7 +22,7 @@ class LoginForm extends Component {
     const { email, password } = this.state;
     const { navigate } = this.props.navigation;
 
-    axios.post('https://shrouded-plateau-80705.herokuapp.com/api/login', { email, password })
+    axios.post('http://localhost:3000/api/login', { email, password })
       .then(response => {
         console.log(response);
         if (response.data.status === 'SUCCESS') {
