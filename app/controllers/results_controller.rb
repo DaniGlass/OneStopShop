@@ -23,7 +23,9 @@ class ResultsController < ApplicationController
   end
 
   def by_shortest_distance
-    render json: results.to_json
+    user = User.find(params[:id])
+
+    render json: user.results_by_shortest_distance.to_json
   end
 
 end

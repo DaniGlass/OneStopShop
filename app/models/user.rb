@@ -16,7 +16,9 @@ class User < ApplicationRecord
   end
 
   def results_by_shortest_distance
-    self.results
+    self.results.sort_by do |store, details|
+      details[:closest_store]["distance"]
+    end
   end
 
 end
