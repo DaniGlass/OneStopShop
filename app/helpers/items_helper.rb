@@ -8,13 +8,14 @@ module ItemsHelper
 
 			if item.name.downcase.include?(input.downcase)
 				matched_items << item
-			 end
+			else
 
-			 if item.tags
-				 if item.tags.downcase.include?(input.downcase)
-					matched_items << item
-				end  
+			  if item.tags
+					if item.tags.downcase.include?(input.downcase)
+						matched_items << item
+					end  
 			  end
+			end
 		end
 
 		return matched_items
