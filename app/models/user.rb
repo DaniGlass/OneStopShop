@@ -21,4 +21,10 @@ class User < ApplicationRecord
     end
   end
 
+  def results_by_lowest_price
+    self.results.sort_by do |store, details|
+      details[:total_price]
+    end
+  end
+
 end

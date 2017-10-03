@@ -15,11 +15,7 @@ class ResultsController < ApplicationController
   def by_lowest_price
     user = User.find(params[:id])
 
-    results = user.results.each do |store|
-        p store["name"]
-    end
-
-    # render json: results.to_json
+    render json: user.results_by_lowest_price.to_json
   end
 
   def by_shortest_distance
