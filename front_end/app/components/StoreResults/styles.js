@@ -25,6 +25,15 @@ export default StyleSheet.create({
     fontSize: 13,
     color: colors.subtleText,
   },
+  smallText: {
+    fontSize: 10,
+    color: colors.subtleText,
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: colors.primaryText,
+  },
   descriptionContainer: {
     flex: 1,
     flexWrap: 'wrap',
