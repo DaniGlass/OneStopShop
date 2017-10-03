@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import colors from '../config/colors';
 import { UserItem } from '../components/UserItem';
+import { FindStopButton } from '../components/FindStopButton';
 
 class ShoppingList extends Component {
 
@@ -33,11 +34,14 @@ class ShoppingList extends Component {
 
   render() {
     return (
-      <ScrollView style={{ backgroundColor: colors.background}}>
-        {this.state.user_items.map((user_item, idx) => (
-          <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
-        ))}
-      </ScrollView>
+      <View>
+        <FindStopButton />
+        <ScrollView style={{ backgroundColor: colors.background}}>
+          {this.state.user_items.map((user_item, idx) => (
+            <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
+          ))}
+        </ScrollView>
+      </View>
     );
   }
 }
