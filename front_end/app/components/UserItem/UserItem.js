@@ -12,24 +12,28 @@ class UserItem extends Component {
   //   (this: any).handleAddPress = this.handleAddPress.bind(this);
   // }
 
-  // handleDeletePress() {
-  //   axios.delete('http://localhost:3000/user_items', {user_item: this.props.user.item})
-  //   .then(response => {
-  //     console.log(response);
-  //     this.props.getUserItems();
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error);
-  //   });
-  // }
+  handleDeletePress() {
+    this.deleteUserItem();
+  }
+
+  deleteUserItem() {
+    axios.delete('http://localhost:3000/user_items', {user_item: this.props.user_item})
+    .then(response => {
+      console.log(response);
+      this.props.getUserItems();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
 
   render() {
-    const iconName = 'ion-ios-minus-outline';
+    const iconName = 'ios-remove-circle-outline';
     return (
-      // <TouchableHighlight
-      //   onPress={() => this.handleDeletePress()}
-      //   underlayColor={colors.rowUnderlay}
-      // >
+      <TouchableHighlight
+        onPress={() => this.handleDeletePress()}
+        underlayColor={colors.rowUnderlay}
+      >
         <View style={styles.row}>
           <Image
             source={{ uri: this.props.user_item.image_url }}
@@ -39,9 +43,16 @@ class UserItem extends Component {
             <Text style={styles.name}>{this.props.user_item.name}</Text>
             <Text style={styles.description}>{this.props.user_item.description}</Text>
           </View>
-
+          <View style={styles.addContainer}>
+            <Icon
+              name={iconName}
+              size={ADD_SIZE}
+              colors={colors.addIcon}
+              style={styles.add}
+            />
+          </View>
         </View>
-      // </TouchableHighlight>
+      </TouchableHighlight>
     );
   }
 }
