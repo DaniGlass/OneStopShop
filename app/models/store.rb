@@ -15,7 +15,13 @@ class Store < ApplicationRecord
   end
 
   def closest_store_from_user_location
-    YelpAdapter.search(self.name)["businesses"].sort_by { |rest| rest["distance"] }.first
+    store = YelpAdapter.search(self.name)["businesses"].sort_by { |rest| rest["distance"] }
+
+    if self.name == "Target"
+      store.delete_if { |s| s["name"] != "Target" }
+    end
+
+    store.first
   end
 
 end
