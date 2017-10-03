@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   get 'results/index'
 
   resources :categories, only: [:index, :show,]
