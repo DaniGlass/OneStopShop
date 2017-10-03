@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
 
 	def search
-		Item.item_search
 	end
 
 	def search_results
-	end
+    input = params[:input]
+		ItemsHelper.search("input").to_json
+  end
 
 end
