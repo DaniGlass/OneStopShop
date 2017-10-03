@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
 	end
 
 	def search_results
-    		input = params[:input]
-		ItemsHelper.search("input").to_json
-  	end
+    input = params[:input]
+		ItemsHelper.search(input).to_json
+  end
 
 end
