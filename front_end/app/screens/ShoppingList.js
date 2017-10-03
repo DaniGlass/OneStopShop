@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Button } from 'react-native';
 import axios from 'axios';
 
 import colors from '../config/colors';
 import { UserItem } from '../components/UserItem';
+// import { FindStopButton } from '../components/FindStopButton';
 
 class ShoppingList extends Component {
 
@@ -13,6 +14,7 @@ class ShoppingList extends Component {
       user_items: []
     };
     this.getUserItems = this.getUserItems.bind(this);
+    this.handleButtonPress = this.handleButtonPress.bind(this);
   }
 
   componentDidMount() {
@@ -31,13 +33,26 @@ class ShoppingList extends Component {
       });
   }
 
+  handleButtonPress() {
+    this.props.navigation.navigate('PickStop');
+  };
+
   render() {
     return (
-      <ScrollView style={{ backgroundColor: colors.background}}>
-        {this.state.user_items.map((user_item, idx) => (
-          <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
-        ))}
-      </ScrollView>
+      <View style={{ backgroundColor: colors.background }}>
+        <ScrollView style={{ backgroundColor: colors.background}}>
+          {this.state.user_items.map((user_item, idx) => (
+            <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
+          ))}
+        </ScrollView>
+        <Button
+          onPress={() => this.handleButtonPress()}
+          title="Find Yo' Stop!"
+          color={colors.buttonText}
+          backgroundColor={colors.buttonBackground}
+          accessibilityLabel="Find Your Stop for One Stop Shopping"
+        />
+      </View>
     );
   }
 }

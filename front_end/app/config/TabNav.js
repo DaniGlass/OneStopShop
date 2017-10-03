@@ -3,10 +3,12 @@ import { TabNavigator, TabView } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import StackNav from './StackNav';
 import ShoppingList from '../screens/ShoppingList';
+import PickStop from '../screens/PickStop';
 
 import colors from './colors';
 
 const ICON_SIZE = 25;
+const logo = require('../images/OneStopShopLogo.png');
 
 const TabNav = TabNavigator({
   StackNav: { screen: StackNav },

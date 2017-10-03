@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import Search from '../screens/Search';
 import ItemList from '../screens/ItemList';
 import ShoppingList from '../screens/ShoppingList';
+import PickStop from '../screens/PickStop';
 
 const StackNav = StackNavigator({
   Search: {
@@ -22,6 +23,12 @@ const StackNav = StackNavigator({
     screen: ShoppingList,
     navigationOptions: {
       title: 'Shopping List',
+    },
+  },
+  PickStop: {
+    screen: PickStop,
+    navigationOptions: {
+      title: 'Your Possible Stops',
     },
   },
 });
