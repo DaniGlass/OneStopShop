@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
   get 'results/index'
+
+  get 'items/search', to: 'items#search'
+  post 'items/search_results', to: 'items#search_results'
 
   resources :categories, only: [:index, :show,]
 

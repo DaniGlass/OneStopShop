@@ -1,10 +1,10 @@
 module ItemsHelper
 
 	def self.search(input)
-  	@items = Item.all
+  	items = Item.all
   	matched_items = []
 
-  	@items.each do |item|
+  	items.each do |item|
   		
   		if item.name.downcase.include?(input.downcase)
       	matched_items << item
