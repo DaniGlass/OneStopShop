@@ -16,7 +16,22 @@ class User < ApplicationRecord
   end
 
   def results_by_shortest_distance
-    self.results
+    self.results.sort_by do |store, details|
+      details[:closest_store]["distance"]
+    end
   end
+
+  def results_by_lowest_price
+    self.results.sort_by do |store, details|
+      details[:total_price]
+    end
+  end
+
+  def results_by_items_found
+    self.results.sort_by do |store, details|
+      details[:not_found_count]
+    end
+  end
+
 
 end
