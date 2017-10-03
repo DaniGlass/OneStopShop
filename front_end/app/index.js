@@ -3,8 +3,15 @@ import {StackNavigator} from 'react-navigation';
 
 import Search from './screens/Search';
 import ItemList from './screens/ItemList';
+import ShoppingList from './screens/ShoppingList';
 
 const App = StackNavigator({
+  ShoppingList: {
+    screen: ShoppingList,
+    navigationOptions: {
+      title: 'Shopping List',
+    },
+  },
   Search: {
     screen: Search,
     navigationOptions: {

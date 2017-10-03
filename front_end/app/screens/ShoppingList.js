@@ -1,13 +1,43 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
+import axios from 'axios';
+
+import colors from '../config/colors';
+import { UserItem } from '../components/UserItem';
 
 class ShoppingList extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_items: []
+    };
+    this.getUserItems = this.getUserItems.bind(this);
+  }
+
+  componentDidMount() {
+    this.getUserItems();
+  }
+
+  getUserItems() {
+    // const category = this.props.navigation.state.params;
+    axios.get('http://localhost:3000/user_items')
+      .then(response => {
+        // console.log(response.data);
+        this.setState({user_items: response.data})
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
-      <View
-        style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>ShoppingList Screen</Text>
-      </View>
+      <ScrollView style={{ backgroundColor: colors.background}}>
+        {this.state.user_items.map((user_item, idx) => (
+          <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
+        ))}
+      </ScrollView>
     );
   }
 }
