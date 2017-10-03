@@ -1,9 +1,11 @@
-import {StackNavigator} from 'react-navigation';
+import React, { Component } from 'react';
+import { StackNavigator } from 'react-navigation';
 
 import Search from '../screens/Search';
 import ItemList from '../screens/ItemList';
+import ShoppingList from '../screens/ShoppingList';
 
-const CategoriesStack = StackNavigator({
+const StackNav = StackNavigator({
   Search: {
     screen: Search,
     navigationOptions: {
@@ -16,6 +18,12 @@ const CategoriesStack = StackNavigator({
       title: `${navigation.state.params.name}`,
     }),
   },
+  ShoppingList: {
+    screen: ShoppingList,
+    navigationOptions: {
+      title: 'Shopping List',
+    },
+  },
 });
 
-export default CategoriesStack;
+export default StackNav;
