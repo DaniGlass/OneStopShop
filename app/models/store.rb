@@ -18,9 +18,7 @@ class Store < ApplicationRecord
     store = YelpAdapter.search(self.name)["businesses"].sort_by { |rest| rest["distance"] }
 
     if self.name == "Target"
-      p "*" * 100
-      p store.count
-      p store.delete_if { |s| s["name"] != "Target" }
+      store.delete_if { |s| s["name"] != "Target" }
     end
 
     store.first
