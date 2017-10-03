@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails'
+
 gem 'simple_command'
 
 gem 'jwt'
@@ -37,6 +39,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

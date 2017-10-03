@@ -1,20 +1,28 @@
 class UserItemsController < ApplicationController
 
-	def create
-	  p "$" * 1000
-	  # p params[:user_items][:item_id].to_i
-	  # checked the route from add button and working fine.
-	  UserItem.create(user_id: current_user.id, item_id: params[:user_items][:item_id].to_i)
-	end
+  skip_before_action :verify_authenticity_token
 
-  def show
-  	p "&" * 100
-  	# I need to check with Edgar how to call cunrrent_user
-  	# @item_list = current_user.items
+  def index
+    user = User.first
+    items = user.items
+    render json: items.to_json
+  end
+
+  def create
+    itemName = params[:item][:name]
+    item = Item.find_by(name: itemName)
+    userItem = UserItem.new
+    userItem.user_id = User.first.id
+    userItem.item_id = item.id
+    userItem.save
+
+    render json: userItem.to_json
   end
 
 	def destroy
-		p "*" * 100
+		@user_item = UserItem.find(params[:id])
+    @user_item.destroy
+
 	end
 
 end
@@ -23,7 +31,7 @@ end
 # Paste to user_items.index.html.erb
 
 # <% @item_list.pluck(:name).each do |item_name| %>
-# 	<%= item_name %> 
+# 	<%= item_name %>
 
 # this part is not right. To delete we need to use user show page.
     # <%= button_to "Delete", {:controller => "user_items"}  %>

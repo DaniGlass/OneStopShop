@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
   attr_accessor :remember_token, :reset_token
 
   has_many :user_items
@@ -16,6 +17,33 @@ class User < ApplicationRecord
 
   validates :password, length: { minimum: 6 }, allow_nil: true
 
+  def results
+    user_items = self.items
+    results = {}
+
+    Store.all.each do |store|
+      results[store.name] = {total_price: store.users_total_price(user_items), not_found_names: store.find_users_missing_items(user_items), not_found_count: store.find_users_missing_items(user_items).count, found_items_count: store.users_items_found_count(user_items), user_list_count: user_items.count,closest_store: store.closest_store_from_user_location}
+    end
+    results
+  end
+
+  def results_by_shortest_distance
+    self.results.sort_by do |store, details|
+      details[:closest_store]["distance"]
+    end
+  end
+
+  def results_by_lowest_price
+    self.results.sort_by do |store, details|
+      details[:total_price]
+    end
+  end
+
+  def results_by_items_found
+    self.results.sort_by do |store, details|
+      details[:not_found_count]
+    end
+  end
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -64,7 +92,6 @@ class User < ApplicationRecord
   end
 
   private
-
     # Converts email to all lower-case.
     def downcase_email
       self.email = email.downcase
@@ -76,4 +103,5 @@ class User < ApplicationRecord
       end while self.class.exists?(access_token: access_token)
     end
 
-end
+
+

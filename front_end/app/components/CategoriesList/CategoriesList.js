@@ -10,7 +10,13 @@ const CategoriesList = ({category, onPress}) => {
       underlayColor={colors.rowUnderlay}
     >
       <View style={styles.row}>
-        <Text>{category.name}</Text>
+        <Image
+          source={{ uri: category.image_url }}
+          style={styles.image}
+        />
+        <View>
+          <Text>{category.name}</Text>
+        </View>
       </View>
     </TouchableHighlight>
   );

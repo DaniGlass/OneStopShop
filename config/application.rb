@@ -17,11 +17,11 @@ module Backend
     # -- all .rb files in that directory are automatically loaded.
 
     # Fix CORS so backend works with frontend!
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
-      end
-    end
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #     origins '*'
+    #     resource '*', :headers => :any, :methods => [:get, :post, :options]
+    #   end
+    # end
   end
 end
