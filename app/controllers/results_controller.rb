@@ -35,4 +35,16 @@ class ResultsController < ApplicationController
     p "CLOSEST Safeway: "
     p closest_safeway = safeway_response.sort_by { |rest| rest["distance"] }.first
   end
+
+  def by_items_found
+
+  end
+
+  def by_lowest_price
+
+  end
+
+  def by_shortest_distance
+
+  end
 end
