@@ -1,17 +1,15 @@
 import React from 'react';
 import {StackNavigator} from 'react-navigation';
-
 import Search from './screens/Search';
 import ItemList from './screens/ItemList';
-import Login from './screens/Login'
+// import Login from './screens/Login';
+import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
+
 
 const App = StackNavigator({
-  Login: {
-    screen: Login,
-    navigationOptions: {
-      title: 'Login',
-    },
-  },
+  Login: { screen: LoginForm },
+  Register: { screen: RegistrationForm },
   Search: {
     screen: Search,
     navigationOptions: {
@@ -24,7 +22,6 @@ const App = StackNavigator({
       title: `${navigation.state.params.name}`,
     }),
   },
-
 
 });
 
