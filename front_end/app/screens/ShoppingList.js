@@ -22,7 +22,6 @@ class ShoppingList extends Component {
   }
 
   getUserItems() {
-    // const category = this.props.navigation.state.params;
     axios.get('http://localhost:3000/user_items')
       .then(response => {
         // console.log(response.data);

@@ -7,20 +7,25 @@ import colors from '../../config/colors';
 import styles, { ADD_SIZE } from './styles';
 
 class UserItem extends Component {
-  // constructor() {
-  //   super(props);
-  //   (this: any).handleAddPress = this.handleAddPress.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+    this.setState = {
+      value: null
+      // items: []
+    };
+    this.getUserItems = this.getUserItems.bind(this);
+  }
 
   handleDeletePress() {
     this.deleteUserItem();
   }
 
   deleteUserItem() {
-    axios.delete('http://localhost:3000/user_items', {user_item: this.props.user_item})
+    const user_item = this.props.navigation.state.params;
+    axios.get(`http://localhost:3000/users/${user_item.user_id}/user_items/${user_item.item_id}`, {user_item: this.props.user_item})
     .then(response => {
       console.log(response);
-      this.props.getUserItems();
+      this.props.getItems();
     })
     .catch(function(error) {
       console.log(error);
