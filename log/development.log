@@ -14060,3 +14060,322 @@ Can't verify CSRF token authenticity.
 Completed 200 OK in 89ms (Views: 0.1ms | ActiveRecord: 10.1ms)
 
 
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 16:39:06 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"", "session"=>{"email"=>""}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 16:39:18 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Danielle@dani.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Danielle@dani.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Danielle@dani.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 16:40:13 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Danielle@dani.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Danielle@dani.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Danielle@dani.com"], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 16:40:46 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Jen", "email"=>"Jen@jeniffer.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Jen", "email"=>"Jen@jeniffer.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Jen@jeniffer.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "831-2E9exRkIhvIhzmbDUg"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Jen"], ["email", "jen@jeniffer.com"], ["password_digest", "$2a$10$kUEq4mB4BY.Lwsn3DcQPf.s2hJDwDvtKA21RBr9NBBOkWofN1FwRi"], ["access_token", "831-2E9exRkIhvIhzmbDUg"], ["created_at", "2017-10-03 23:40:46.178029"], ["updated_at", "2017-10-03 23:40:46.178029"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 75ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 16:43:46 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Jen@jeniffer.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Jen@jeniffer.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Jen@jeniffer.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 16:46:00 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Jen@jeniffer.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Jen@jeniffer.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Jen@jeniffer.com"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 16:46:41 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Edgar", "email"=>"Edgar@edgar.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Edgar", "email"=>"Edgar@edgar.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Edgar@edgar.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "WYm86yCwvvR_0VAHEdKTkA"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Edgar"], ["email", "edgar@edgar.com"], ["password_digest", "$2a$10$0Zea2qqPPwOF.qm7Hg1C5OT2y8Qk9.2N/Nq01eZpLX8sxdHhhsksK"], ["access_token", "WYm86yCwvvR_0VAHEdKTkA"], ["created_at", "2017-10-03 23:46:41.657767"], ["updated_at", "2017-10-03 23:46:41.657767"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 82ms (Views: 0.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 16:53:40 -0700
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Test", "email"=>"Test@test.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test", "email"=>"Test@test.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Test@test.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "gFUMV7mDoKOaYOhDHa-rzw"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Test"], ["email", "test@test.com"], ["password_digest", "$2a$10$5fbT0OIsE6JmR6.7S32VCeC1q4YGJKRPy.bxxwvxWQcBb57/BVha2"], ["access_token", "gFUMV7mDoKOaYOhDHa-rzw"], ["created_at", "2017-10-03 23:53:40.644837"], ["updated_at", "2017-10-03 23:53:40.644837"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 110ms (Views: 0.2ms | ActiveRecord: 13.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 16:57:00 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Test", "email"=>"Test@test.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test", "email"=>"Test@test.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Test@test.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 135ms (Views: 1.9ms | ActiveRecord: 10.5ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 16:57:01 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Test", "email"=>"Test@test.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Test", "email"=>"Test@test.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Test@test.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 70ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 17:03:00 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Hello", "email"=>"Hello@hello.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Hello", "email"=>"Hello@hello.com"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Hello@hello.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "ZPlEExDGSyUvQSNuImSNQw"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Hello"], ["email", "hello@hello.com"], ["password_digest", "$2a$10$sE5yR7lCnXUz.U8ABr1ag.ICAPFKz3A9kzjiixFc66Iu5BLMCTbKK"], ["access_token", "ZPlEExDGSyUvQSNuImSNQw"], ["created_at", "2017-10-04 00:03:00.247799"], ["updated_at", "2017-10-04 00:03:00.247799"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 80ms (Views: 0.1ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 17:06:11 -0700
+  
+ActionController::RoutingError (uninitialized constant ApplicationController::SessionsHelper):
+  
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/api/users_controller.rb:3:in `<module:Api>'
+app/controllers/api/users_controller.rb:1:in `<top (required)>'
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 17:08:52 -0700
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Fun", "email"=>"Fun@fun.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Fun", "email"=>"Fun@fun.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Fun@fun.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "O8WySZQZT1S_zwNjqzBFtA"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Fun"], ["email", "fun@fun.com"], ["password_digest", "$2a$10$4CwnuOo2.CAoeoJqXvGwK.xk.p/sqzo74tS8vhbXxH9IVX7u8Oz0m"], ["access_token", "O8WySZQZT1S_zwNjqzBFtA"], ["created_at", "2017-10-04 00:08:53.264602"], ["updated_at", "2017-10-04 00:08:53.264602"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 106ms (Views: 0.3ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:10:03 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Fun@fun.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Fun@fun.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Fun@fun.com"], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:12:08 -0700
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+LoadError (Unable to autoload constant Api::ApplicationController, expected /Users/dani/Desktop/OneStopShop/app/controllers/api/application_controller.rb to define it):
+  
+app/controllers/api/sessions_controller.rb:3:in `<module:Api>'
+app/controllers/api/sessions_controller.rb:1:in `<top (required)>'
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:13:51 -0700
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Test@test.com", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity.
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Test@test.com"], ["LIMIT", 1]]
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:17:40 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Test@test.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Test@test.com"], ["LIMIT", 1]]
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 17:18:32 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Sara", "email"=>"Sara@sara.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Sara", "email"=>"Sara@sara.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Sara@sara.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "IUBr_m8lQxPQsv1_MOYSLw"], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Sara"], ["email", "sara@sara.com"], ["password_digest", "$2a$10$Q4.hVbyCUUs1cWWAPx75rOi02UIPgKaWWVBq0j6B0T3fUeGhXqM8q"], ["access_token", "IUBr_m8lQxPQsv1_MOYSLw"], ["created_at", "2017-10-04 00:18:32.555814"], ["updated_at", "2017-10-04 00:18:32.555814"]]
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 107ms (Views: 0.1ms | ActiveRecord: 23.1ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:19:30 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Sara@sara.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Sara@sara.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Sara@sara.com"], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 17:20:12 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Sara@sara.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Sara@sara.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Sara@sara.com"], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 18:05:05 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Dillon", "email"=>"Dillon@dillon.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Dillon", "email"=>"Dillon@dillon.com"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Dillon@dillon.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "sGdMDwHw7AA7CAAY3Bq7sQ"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Dillon"], ["email", "dillon@dillon.com"], ["password_digest", "$2a$10$EH4IlfqvwlD5vDGc6yUSZOMsszb28bhepCRlZCWAIa1pz9qANoQdu"], ["access_token", "sGdMDwHw7AA7CAAY3Bq7sQ"], ["created_at", "2017-10-04 01:05:05.521281"], ["updated_at", "2017-10-04 01:05:05.521281"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 111ms (Views: 0.9ms | ActiveRecord: 7.5ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 18:07:13 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Dillon", "email"=>"Dillon@dillon.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Dillon", "email"=>"Dillon@dillon.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Dillon@dillon.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 98ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 18:08:02 -0700
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Josh", "email"=>"Josh@josh.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Josh", "email"=>"Josh@josh.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Josh@josh.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "-75w0UrDUKK10PBkGX9MpQ"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Josh"], ["email", "josh@josh.com"], ["password_digest", "$2a$10$Gu58Nxoc1eWgsHDrXZOwhuk948Dp/StAxEROi.rl9XD8M.jGzNmaO"], ["access_token", "-75w0UrDUKK10PBkGX9MpQ"], ["created_at", "2017-10-04 01:08:03.045101"], ["updated_at", "2017-10-04 01:08:03.045101"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/users" for 127.0.0.1 at 2017-10-03 18:26:11 -0700
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::UsersController#create as HTML
+  Parameters: {"username"=>"Poop", "email"=>"Poop@poop.com", "password"=>"[FILTERED]", "user"=>{"username"=>"Poop", "email"=>"Poop@poop.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "Poop@poop.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."access_token" = $1 LIMIT $2[0m  [["access_token", "DuJj_JZLAV9-V3zhqBSp0g"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "access_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Poop"], ["email", "poop@poop.com"], ["password_digest", "$2a$10$WAE4Pm2nNrRwsr.yY1KPjeMnSuXc7RP5.0kw2kmF/7u/7YDQj/Eoe"], ["access_token", "DuJj_JZLAV9-V3zhqBSp0g"], ["created_at", "2017-10-04 01:26:12.071677"], ["updated_at", "2017-10-04 01:26:12.071677"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 109ms (Views: 0.4ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 19:01:24 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Poop@poop.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Poop@poop.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Poop@poop.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 8.8ms)
+
+
+  
+NoMethodError (undefined method `pry' for #<Binding:0x007fa7ae384ef8>
+Did you mean?  pretty_print
+               pretty_inspect
+               pretty_print_cycle
+               try):
+  
+app/controllers/api/sessions_controller.rb:12:in `create'
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 19:01:55 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Poop@poop.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Poop@poop.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Poop@poop.com"], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/categories/11" for 127.0.0.1 at 2017-10-03 19:02:08 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mCategory Load (9.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 11]]
+Completed 200 OK in 129ms (Views: 0.2ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/categories/2" for 127.0.0.1 at 2017-10-03 19:02:12 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 2]]
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/user_items" for 127.0.0.1 at 2017-10-03 19:02:13 -0700
+  
+ArgumentError (Before process_action callback :verify_authenticity_token has not been defined):
+  
+app/controllers/user_items_controller.rb:3:in `<class:UserItemsController>'
+app/controllers/user_items_controller.rb:1:in `<top (required)>'
+Started POST "/api/login" for 127.0.0.1 at 2017-10-03 19:03:09 -0700
+Processing by Api::SessionsController#create as HTML
+  Parameters: {"email"=>"Poop@poop.com", "password"=>"[FILTERED]", "session"=>{"email"=>"Poop@poop.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Poop@poop.com"], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2017-10-03 19:03:10 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 1]]
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2017-10-03 19:03:14 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mItem Load (2.8ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 4]]
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/user_items" for 127.0.0.1 at 2017-10-03 19:03:15 -0700
+Processing by UserItemsController#create as HTML
+  Parameters: {"item"=>{"id"=>26, "category_id"=>4, "name"=>"Pizza Rising Crust Four Cheese", "brand"=>nil, "description"=>"We start with our preservative-free rising crust, and then top it off with our signature sauce, made from scratch using California vine-ripened tomatoes", "image_url"=>"https://shop.safeway.com/productimages/200x200/148050178_200x200.jpg", "tags"=>"pizza frozen", "created_at"=>"2017-10-03T22:15:06.135Z", "updated_at"=>"2017-10-03T22:15:06.135Z"}, "user_item"=>{}}
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."name" = $1 LIMIT $2[0m  [["name", "Pizza Rising Crust Four Cheese"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mUserItem Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "user_items" WHERE "user_items"."user_id" = $1 AND "user_items"."item_id" = $2 LIMIT $3[0m  [["user_id", 1], ["item_id", 26], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "user_items" ("user_id", "item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["item_id", 26], ["created_at", "2017-10-04 02:03:15.609752"], ["updated_at", "2017-10-04 02:03:15.609752"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/categories/4" for 127.0.0.1 at 2017-10-03 19:03:15 -0700
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."category_id" = $1[0m  [["category_id", 4]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+

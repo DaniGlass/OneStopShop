@@ -10,7 +10,7 @@ module Api
       if @user
         @user.create_reset_digest
         @user.send_password_reset_email
-        render json: {status: 'SUCCESS', message: 'Email sent with password reset instructions'}
+        render json: {status: 200, message: 'Email sent with password reset instructions'}
       else
         render json: {status: 422, errors: ['Email address not found.']}
       end
@@ -22,7 +22,7 @@ module Api
         render json: {status: 422, errors: ['Password cannot be empty']}
       elsif @user.update_attributes(user_params)
         log_in @user
-        render json: {status: 'SUCCESS', message: 'Password has been reset.'}
+        render json: {status: 200, message: 'Password has been reset.'}
       end
 
     end
