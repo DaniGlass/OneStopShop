@@ -3,7 +3,7 @@
 # Store.destroy
 # StorePrice.destroy
 
-User.create(name: "Jen", email: "jen@jen.com", password: "123456")
+User.create(username: "Jen", email: "jen@jen.com", password: "123456")
 
 Category.create([{name: "Meat, Poultry, & Fish"}, {name: "Produce"}, {name: "Dairy & Eggs"}, {name: "Frozen Food"}, {name: "Beverages"}, {name: "Adult Beverages"}, {name: "Snacks & Candy"}, {name: "Beauty"}, {name: "Healthcare"}, {name: "Home"}, {name: "Baby"}, {name: "Pets"}, {name: "Office Supplies"}, {name: "Electronics"}])
 
@@ -40,8 +40,8 @@ deli_turkey.store_prices.create(store_id: 6, price: 7.99)
 ### Ham ###
 deli_ham = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Ham", brand: "Deli", description: "Fresh ham. Water. Vinegar. Organic sugar. Natural flavors. Sea salt. Humanely raised.", image_url: "https://shop.safeway.com/productimages/100x100/182030118_100x100.jpg", tags: "deli lunch meat ham")
 deli_ham.store_prices.create(store_id: 4, price: 6.59)
-deli_ham.store_prices.create(store_id: 4, price: 10.89)
-deli_ham.store_prices.create(store_id: 4, price: 7.39)
+deli_ham.store_prices.create(store_id: 5, price: 10.89)
+deli_ham.store_prices.create(store_id: 6, price: 7.39)
 
 #### Fish ####
 shrimp = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Cooked/Peeled Cocktail Shrimp, 1 lb.", description: "Cooked and Peeled Shrimp ready for serving.", image_url: "https://previews.123rf.com/images/cokemomo/cokemomo1301/cokemomo130100018/17379188-shrimp-cocktail-prawn-cocktail-appetizer-Stock-Photo.jpg", tags: "cocktail shrimp")
@@ -73,7 +73,7 @@ ahi_tuna.store_prices.create(store_id: 6, price: 11.19)
 ################### Produce
 
 #### Avocado ####
-avocado = Item.create(category: Category.find_by(name: "Produce"), name: "Avocado", brand: "Hass", description: "Loved for their creamy texture and heart-healthy unsaturated fat, versatile avocados can be added to everything from salads and omelets to smoothies and even dessert recipes.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/155x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_bcb00e2e-0373-4aa5-acef-515e35726278.jpg", tags: "avocado ")
+avocado = Item.create(category: Category.find_by(name: "Produce"), name: "Avocado", brand: "Hass", description: "Loved for their creamy texture and heart-healthy unsaturated fat, versatile avocados can be added to almost everything.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/155x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_bcb00e2e-0373-4aa5-acef-515e35726278.jpg", tags: "avocado ")
 avocado.store_prices.create(store_id: 4, price: 1.99)
 avocado.store_prices.create(store_id: 5, price: 2.50)
 avocado.store_prices.create(store_id: 6, price: 1.99)

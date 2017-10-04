@@ -48,7 +48,6 @@ class ShoppingList extends Component {
             color={colors.buttonText}
             backgroundColor={colors.buttonBackground}
             accessibilityLabel="Find Your Stop for One Stop Shopping"
-            style={{height: 600}}
           />
         </ScrollView>
       </View>

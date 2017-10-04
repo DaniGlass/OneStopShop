@@ -11,8 +11,9 @@ Rails.application.routes.draw do
 
   resources :stores
 
-  devise_for :users
+#   devise_for :users
   resources :users, only: [:show]
+
 
   get "users/:id/results" => 'results#index'
   get "users/:id/results/by_items_found" => 'results#by_items_found'
@@ -21,4 +22,22 @@ Rails.application.routes.draw do
 
 	root 'categories#index'
 
+
+  delete '/logout'  => 'sessions#destroy'
+
+  namespace :api do
+
+    post   '/login'   => 'sessions#create'
+    get    '/verify'  => 'sessions#verify_access_token'
+
+    resources :users, only: [:create, :show, :update, :destroy]
+
+    resources :password_resets, only: [:create, :update]
+  end
+
+
 end
+
+
+
+
