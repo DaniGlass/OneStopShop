@@ -18,12 +18,13 @@ class StoreResults extends Component {
           <Text style={styles.name}>{this.props.store[1].closest_store.name}</Text>
           <Text style={styles.description}>{this.props.store[1].closest_store.location.display_address[0]}</Text>
           <Text style={styles.description}>{this.props.store[1].closest_store.location.display_address[1]}</Text>
-          <Text style={styles.description}>{distance} miles away</Text>
+          <Text style={styles.distance}>{distance} miles away</Text>
         </View>
         <View style={styles.itemsResults}>
           <Text style={styles.smallText} >One Stop Price</Text>
           <Text style={styles.smallText} >for items found:</Text>
           <Text style={styles.price}>${this.props.store[1].total_price}</Text>
+          <Text style={styles.smallText}>{this.props.store[1].found_items_count} out of {this.props.store[1].user_list_count} items found</Text>
         </View>
       </View>
     );

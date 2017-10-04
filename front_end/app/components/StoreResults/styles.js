@@ -34,6 +34,11 @@ export default StyleSheet.create({
     fontWeight: '500',
     color: colors.primaryText,
   },
+  distance: {
+    fontSize: 13,
+    fontStyle: 'italic',
+    color: colors.subtleText,
+  },
   descriptionContainer: {
     flex: 1,
     flexWrap: 'wrap',
