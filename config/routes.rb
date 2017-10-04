@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   resources :user_items, only: [:index, :create, :destroy]
 
-  resources :stores
-
   devise_for :users
   resources :users, only: [:show]
 
