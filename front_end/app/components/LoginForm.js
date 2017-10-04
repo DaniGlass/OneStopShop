@@ -19,11 +19,25 @@ class LoginForm extends Component {
     const { email, password } = this.state;
     const { navigate } = this.props.navigation;
 
+
+
     axios.post('http://localhost:3000/api/login', { email, password })
-      .then(response =>
-        navigate('Search', { accessToken: response.data.accessToken }))
+     .then(response => {
+          console.log(response)
+        if (response.data.status === 'SUCCESS') {
+          navigate('Search', { accessToken: response.data.accessToken });
+        } else { console.log(response)
+          this.setState({ errors: response.data.errors });
+        }
+      })
       .catch(error => console.log(error));
-    }
+  }
+
+    // axios.post('http://localhost:3000/api/login', { email, password })
+    //   .then(response =>
+    //     navigate('Search', { accessToken: response.data.accessToken }))
+    //   .catch(error => console.log(error));
+    // }
 
   render() {
     const { navigate } = this.props.navigation;
