@@ -4,9 +4,6 @@ import axios from 'axios';
 import { Button, Card, CardSection, Input } from './common';
 
 class LoginForm extends Component {
-  static navigationOptions = {
-    title: 'Login'
-  }
   constructor() {
     super();
     this.state = {
@@ -25,8 +22,8 @@ class LoginForm extends Component {
     axios.post('http://localhost:3000/api/login', { email, password })
       .then(response => {
         console.log(response);
-        if (response.data.status === 'SUCCESS') {
-          navigate('Map', { accessToken: response.data.accessToken });
+        if (response.data.status === 200) {
+          navigate('Search', { accessToken: response.data.accessToken });
         } else {
           this.setState({ errors: response.data.errors });
         }
@@ -69,13 +66,7 @@ class LoginForm extends Component {
 
           <CardSection>
             <Button onPress={() => navigate('Register')}>
-              Register now
-            </Button>
-          </CardSection>
-
-          <CardSection>
-            <Button onPress={() => navigate('Map', { accessToken: '' })}>
-              Continue as a guest
+              Register
             </Button>
           </CardSection>
 

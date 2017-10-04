@@ -5,8 +5,22 @@ import Search from '../screens/Search';
 import ItemList from '../screens/ItemList';
 import ShoppingList from '../screens/ShoppingList';
 import PickStop from '../screens/PickStop';
+import LoginForm from '../components';
+import RegistrationForm from '../components';
 
 const StackNav = StackNavigator({
+  LoginForm: {
+    screen: LoginForm,
+    navigationOptions: {
+      title: 'Login',
+    },
+  },
+  RegistrationForm: {
+    screen: RegistrationForm,
+    navigationOptions: {
+      title: 'Register',
+    },
+  },
   Search: {
     screen: Search,
     navigationOptions: {
