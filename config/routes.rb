@@ -7,14 +7,14 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index, :show,]
 
-  resources :user_items, only: [:index, :create, :destroy]
-
   resources :stores
 
 #   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :user_items, only: [:index, :create]
+  end
 
-
+  post "users/:user_id/user_items/:id" => 'user_items#destroy'
   get "users/:id/results" => 'results#index'
   get "users/:id/results/by_items_found" => 'results#by_items_found'
   get "users/:id/results/by_price" => 'results#by_lowest_price'
