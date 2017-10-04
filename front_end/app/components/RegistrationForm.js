@@ -23,16 +23,6 @@ class RegistrationForm extends Component {
       .then(response =>
         navigate('Search', { accessToken: response.data.accessToken }))
       .catch(error => console.log(error));
-
-    // axios.post('http://localhost:3000/api/users', { username, email, password })
-    //   .then(response => {
-    //     if (response.data.status === 200) {
-    //       navigate('Search', { accessToken: response.data.accessToken });
-    //     } else {
-    //       this.setState({ errors: response.data.errors });
-    //     }
-    //   })
-    //   .catch(error => console.log(error));
   }
 
   render() {

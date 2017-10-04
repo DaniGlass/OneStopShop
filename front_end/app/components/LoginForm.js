@@ -20,16 +20,10 @@ class LoginForm extends Component {
     const { navigate } = this.props.navigation;
 
     axios.post('http://localhost:3000/api/login', { email, password })
-      .then(response => {
-        console.log(response);
-        if (response.data.status === 200) {
-          navigate('Search', { accessToken: response.data.accessToken });
-        } else {
-          this.setState({ errors: response.data.errors });
-        }
-      })
+      .then(response =>
+        navigate('Search', { accessToken: response.data.accessToken }))
       .catch(error => console.log(error));
-  }
+    }
 
   render() {
     const { navigate } = this.props.navigation;
