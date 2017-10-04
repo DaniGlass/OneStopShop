@@ -20,13 +20,12 @@ class UserItemsController < ApplicationController
   end
 
 	def destroy
-    itemName = params[:item][:name]
-    item = Item.find_by(name: itemName)
-    userItem.user_id = User.first.id
-    userItem.item_id = item.id
-    userItem.destroy!
+    user_item.user_id = User.first.id
+    user_item.item_id = item.id
 
-    render json: userItem.to_json
+    render json: @user_item.to_json
+
+    UserItem.find(params[:id]).destroy!
 	end
 
 end
