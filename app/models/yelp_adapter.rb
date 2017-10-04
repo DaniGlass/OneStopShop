@@ -23,8 +23,8 @@ module YelpAdapter
       params = {
         term: term,
         # location: DEFAULT_LOCATION,
-        latitude: latitude,
-        longitude: longitude,
+        latitude: 37.784517,
+        longitude: -122.397194,
         limit: SEARCH_LIMIT,
         open_now: true
       }
