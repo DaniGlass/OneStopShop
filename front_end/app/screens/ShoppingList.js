@@ -44,14 +44,14 @@ class ShoppingList extends Component {
           {this.state.user_items.map((user_item, idx) => (
             <UserItem user_item={user_item} getUserItems={this.getUserItems} key={idx} />
           ))}
+          <Button
+            onPress={() => this.handleButtonPress()}
+            title="Find Yo' Stop!"
+            color={colors.buttonText}
+            backgroundColor={colors.buttonBackground}
+            accessibilityLabel="Find Your Stop for One Stop Shopping"
+          />
         </ScrollView>
-        <Button
-          onPress={() => this.handleButtonPress()}
-          title="Find Yo' Stop!"
-          color={colors.buttonText}
-          backgroundColor={colors.buttonBackground}
-          accessibilityLabel="Find Your Stop for One Stop Shopping"
-        />
       </View>
     );
   }
