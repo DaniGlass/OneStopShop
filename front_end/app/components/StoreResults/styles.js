@@ -46,5 +46,10 @@ export default StyleSheet.create({
   itemsResults: {
     alignSelf: 'flex-end',
     alignItems: 'center',
-  }
+  },
+  secondaryText: {
+    fontSize: 10,
+    fontWeight: '500',
+    color: colors.primaryText,
+  },
 })

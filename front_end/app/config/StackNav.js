@@ -11,24 +11,28 @@ const StackNav = StackNavigator({
     screen: Search,
     navigationOptions: {
       title: 'Search',
+      headerLeft: null
     },
   },
   ItemList: {
     screen: ItemList,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.name}`,
+      headerLeft: null
     }),
   },
   ShoppingList: {
     screen: ShoppingList,
     navigationOptions: {
       title: 'Shopping List',
+      headerLeft: null
     },
   },
   PickStop: {
     screen: PickStop,
     navigationOptions: {
       title: 'Your Possible Stops',
+      headerLeft: null
     },
   },
 });
