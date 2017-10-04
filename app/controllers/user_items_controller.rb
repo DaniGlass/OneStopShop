@@ -11,12 +11,12 @@ class UserItemsController < ApplicationController
   def create
     itemName = params[:item][:name]
     item = Item.find_by(name: itemName)
-    userItem = UserItem.new
-    userItem.user_id = User.first.id
-    userItem.item_id = item.id
-    userItem.save
+    @user_item = UserItem.new
+    @user_item.user_id = User.first.id
+    @user_item.item_id = item.id
+    @user_item.save
 
-    render json: userItem.to_json
+    render json: @user_item.to_json
   end
 
 	def destroy
