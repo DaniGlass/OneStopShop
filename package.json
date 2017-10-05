@@ -1,7 +1,0 @@
-{
-  "name": "backend",
-  "private": true,
-  "dependencies": {
-    "react-native-open-maps": "^0.1.1"
-  }
-}
