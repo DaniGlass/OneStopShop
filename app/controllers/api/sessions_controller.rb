@@ -9,7 +9,6 @@ module Api
       if @user && @user.authenticate(params[:password])
         render json: {status: 'SUCCESS', accessToken:@user.access_token}.to_json
       else
-
         render json: {errors: ["Incorrect email or password."], status: 422}.to_json
       end
     end
