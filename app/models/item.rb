@@ -3,4 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category
   has_many   :store_prices
   has_many   :stores, through: :store_prices
+
 end
+
+

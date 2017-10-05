@@ -3,11 +3,77 @@
 # Store.destroy
 # StorePrice.destroy
 
-Category.create([{name: "Meat, Poultry, & Fish"}, {name: "Produce"}, {name: "Dairy & Eggs"}, {name: "Frozen Food"}, {name: "Beverages"}, {name: "Adult Beverages"}, {name: "Snacks & Candy"}, {name: "Beauty"}, {name: "Healthcare"}, {name: "Home"}, {name: "Baby"}, {name: "Pets"}, {name: "Office Supplies"}, {name: "Electronics"}])
+# User.create(username: "Jen", email: "jen@jen.com", password: "123456")
+
+Category.create([{name: "Produce"}, {name: "Meat, Poultry, & Fish"}, {name: "Dairy & Eggs"}, {name: "Frozen Food"}, {name: "Beverages"}, {name: "Adult Beverages"}, {name: "Snacks & Candy"}, {name: "Beauty"}, {name: "Healthcare"}, {name: "Home"}, {name: "Baby"}, {name: "Pets"}, {name: "Office Supplies"}, {name: "Electronics"}])
 
 Store.create([{name: "Walgreens"}, {name: "CVS/Pharmacy"}, {name: "Walmart"}, {name: "Target"}, {name: "Whole Foods"}, {name: "Safeway"}])
 
+
+################### Category 2: Produce
+
+#### Avocado ####
+avocado = Item.create(category: Category.find_by(name: "Produce"), name: "Avocado", brand: "Hass", description: "Loved for their creamy texture and heart-healthy unsaturated fat, versatile avocados can be added to almost everything.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/155x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_bcb00e2e-0373-4aa5-acef-515e35726278.jpg", tags: "avocado ")
+avocado.store_prices.create(store_id: 4, price: 1.99)
+avocado.store_prices.create(store_id: 5, price: 2.50)
+avocado.store_prices.create(store_id: 6, price: 1.99)
+
+#### Broccoli ####
+broccoli = Item.create(category: Category.find_by(name: "Produce"), name: "Broccoli Crown", brand: "Produce", description: "Broccoli contains many vitamins, including vitamin C and vitamin A.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_42d7673d-8670-469d-8a32-0fc5760e1a7f.jpg", tags: "broccoli brocoli crown ")
+broccoli.store_prices.create(store_id: 3, price: 1.99)
+broccoli.store_prices.create(store_id: 4, price: 2.59)
+broccoli.store_prices.create(store_id: 5, price: 3.99)
+broccoli.store_prices.create(store_id: 6, price: 2.79)
+
+#### Asparagus ####
+asparagus = Item.create(category: Category.find_by(name: "Produce"), name: "Local Asparagus", brand: "Produce", description: "Enjoy this spring favorite veggie raw, in salads, steamed, or roasted.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_7b757912-89ea-4f37-8aa6-3290d90eeb43.jpg", tags: "asparagus spears ")
+asparagus.store_prices.create(store_id: 3, price: 4.99)
+asparagus.store_prices.create(store_id: 4, price: 4.89)
+asparagus.store_prices.create(store_id: 5, price: 6.99)
+asparagus.store_prices.create(store_id: 6, price: 5.59)
+
+#### Bell Peppers ####
+red_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Red Bell Pepper", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_748bbd55-f1ee-4760-9a37-873bd4fe1dd8.jpg", tags: "peppers pepper red bell")
+red_bell_pepper.store_prices.create(store_id: 3, price: 0.99)
+red_bell_pepper.store_prices.create(store_id: 4, price: 0.99)
+red_bell_pepper.store_prices.create(store_id: 5, price: 1.99)
+red_bell_pepper.store_prices.create(store_id: 6, price: 1.20)
+
+green_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Green Bell Peppers", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://shop.safeway.com/productimages/200x200/184480005_200x200.jpg", tags: "peppers pepper green bell")
+green_bell_pepper.store_prices.create(store_id: 6, price: 0.70)
+green_bell_pepper.store_prices.create(store_id: 6, price: 0.90)
+green_bell_pepper.store_prices.create(store_id: 6, price: 1.90)
+green_bell_pepper.store_prices.create(store_id: 6, price: 1.00)
+
+orange_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Orange Bell Peppers", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://shop.safeway.com/productimages/100x100/184480013_100x100.jpg", tags: "peppers pepper orange bell")
+orange_bell_pepper.store_prices.create(store_id: 3, price: 1.20)
+orange_bell_pepper.store_prices.create(store_id: 4, price: 1.50)
+orange_bell_pepper.store_prices.create(store_id: 5, price: 1.99)
+orange_bell_pepper.store_prices.create(store_id: 6, price: 1.70)
+
+#### Onion ####
+
+red_onion = Item.create(category: Category.find_by(name: "Produce"), name: "Red Onion", brand: "Produce", description: "Red Onions are in season year-round, perfect for salads and salsas.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_55e5259d-438f-4358-89cb-683a8f4874de.jpg", tags: "onions red")
+red_onion.store_prices.create(store_id: 3, price: 1.20)
+red_onion.store_prices.create(store_id: 4, price: 1.75)
+red_onion.store_prices.create(store_id: 5, price: 2.59)
+red_onion.store_prices.create(store_id: 6, price: 1.64)
+
+yellow_onion = Item.create(category: Category.find_by(name: "Produce"), name: "Yellow Onion", brand: "Produce", description: "Yellow Onions are in season year-round, perfect for stews, stocks, and soups.", image_url: "https://shop.safeway.com/productimages/200x200/184710074_200x200.jpg", tags: "onions white yellow")
+yellow_onion.store_prices.create(store_id: 3, price: 1.20)
+yellow_onion.store_prices.create(store_id: 4, price: 1.75)
+yellow_onion.store_prices.create(store_id: 5, price: 2.59)
+yellow_onion.store_prices.create(store_id: 6, price: 1.64)
+
+#### Tomato ####
+large_tomato = Item.create(category: Category.find_by(name: "Produce"), name: "Large Red Tomato", brand: "Produce", description: "In season now, so get 'em while you can! These delicate beauties are ripened on the vine.", image_url: "https://shop.safeway.com/productimages/100x100/184570063_100x100.jpg", tags: "tomatoe tomato heirloom")
+large_tomato.store_prices.create(store_id: 3, price: 1.20)
+large_tomato.store_prices.create(store_id: 4, price: 1.75)
+large_tomato.store_prices.create(store_id: 5, price: 2.59)
+large_tomato.store_prices.create(store_id: 6, price: 1.64)
+
 ############# Category 1: Meat/Poultry/Fish
+
 
 #### Ground Beef ####
 ground_beef = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Ground Beef, 1 lb.", description: "Grass Fed Ground Beef 85% Lean, 15\% Fat", image_url: "https://i1.wp.com/foodpoisoningbulletin.com/wp-content/uploads/Raw-Ground-Beef.jpg?resize=350\%2C200&ssl=1", tags: "ground beef hamburger burger")
@@ -17,29 +83,29 @@ ground_beef.store_prices.create(store_id: 5, price: 10.99)
 ground_beef.store_prices.create(store_id: 6, price: 5.84)
 
 ##### Chicken #####
-chicken_thigh = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Thigh / lb. ", brand: "Chicken Drumsticks", description: "Packaged Chicken Drumsticks", image_url: "https://www.abelandcole.co.uk/media/294_12722_z.jpg", tags: "chicken leg drumstick")
+chicken_thigh = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Thigh / lb. ", brand: "Chicken Drumsticks", description: "Juicy and easy to prepare!", image_url: "https://www.abelandcole.co.uk/media/294_12722_z.jpg", tags: "chicken leg drumstick")
 chicken_thigh.store_prices.create(store_id: 3, price: 4.59)
 chicken_thigh.store_prices.create(store_id: 4, price: 7.59)
 chicken_thigh.store_prices.create(store_id: 5, price: 9.19)
 chicken_thigh.store_prices.create(store_id: 6, price: 6.39)
 
-chicken_breast = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Breast / lb.", brand: "Organics", description: "Chicken Breast Boneless Skinless", image_url: "https://images-na.ssl-images-amazon.com/images/I/719JxkiwTVL._AC_UL320_SR316,320_.jpg", tags: "chicken breast")
+chicken_breast = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Chicken Breast / lb.", brand: "Organics", description: "These boneless, skinless, hand-trimmed filets contain all-natural chicken breast meat and are perfect for your favorite recipes. ", image_url: "https://images-na.ssl-images-amazon.com/images/I/719JxkiwTVL._AC_UL320_SR316,320_.jpg", tags: "chicken breast")
 chicken_breast.store_prices.create(store_id: 3, price: 4.50)
 chicken_breast.store_prices.create(store_id: 4, price: 7.99)
 chicken_breast.store_prices.create(store_id: 5, price: 9.99)
 chicken_breast.store_prices.create(store_id: 6, price: 6.99)
 
 ### Turkey ###
-deli_turkey = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Turkey", brand: "Deli", description: "Smoked Turkey Breast", image_url: "https://shop.safeway.com/productimages/100x100/182030895_100x100.jpg", tags: "turkey deli lunch meat")
+deli_turkey = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Turkey", brand: "Deli", description: "Extra lean, rich in protein and gluten free.", image_url: "https://shop.safeway.com/productimages/100x100/182030895_100x100.jpg", tags: "turkey deli lunch meat")
 deli_turkey.store_prices.create(store_id: 4, price: 6.99)
 deli_turkey.store_prices.create(store_id: 5, price: 10.99)
 deli_turkey.store_prices.create(store_id: 6, price: 7.99)
 
 ### Ham ###
-deli_ham = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Ham", brand: "Deli", description: "S", image_url: "https://shop.safeway.com/productimages/100x100/182030118_100x100.jpg", tags: "deli lunch meat ham")
+deli_ham = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Sliced Deli Ham", brand: "Deli", description: "Fresh ham. Water. Vinegar. Organic sugar. Natural flavors. Sea salt. Humanely raised.", image_url: "https://shop.safeway.com/productimages/100x100/182030118_100x100.jpg", tags: "deli lunch meat ham")
 deli_ham.store_prices.create(store_id: 4, price: 6.59)
-deli_ham.store_prices.create(store_id: 4, price: 10.89)
-deli_ham.store_prices.create(store_id: 4, price: 7.39)
+deli_ham.store_prices.create(store_id: 5, price: 10.89)
+deli_ham.store_prices.create(store_id: 6, price: 7.39)
 
 #### Fish ####
 shrimp = Item.create(category: Category.find_by(name: "Meat, Poultry, & Fish"), name: "Cooked/Peeled Cocktail Shrimp, 1 lb.", description: "Cooked and Peeled Shrimp ready for serving.", image_url: "https://previews.123rf.com/images/cokemomo/cokemomo1301/cokemomo130100018/17379188-shrimp-cocktail-prawn-cocktail-appetizer-Stock-Photo.jpg", tags: "cocktail shrimp")
@@ -67,76 +133,10 @@ ahi_tuna.store_prices.create(store_id: 5, price: 13.59)
 ahi_tuna.store_prices.create(store_id: 6, price: 11.19)
 
 
-
-################### Produce
-
-#### Avocado ####
-avocado = Item.create(category: Category.find_by(name: "Produce"), name: "Avocado", brand: "Hass", description: "Organic Avocado", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/155x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_bcb00e2e-0373-4aa5-acef-515e35726278.jpg", tags: "avocado ")
-avocado.store_prices.create(store_id: 4, price: 1.99)
-avocado.store_prices.create(store_id: 5, price: 2.50)
-avocado.store_prices.create(store_id: 6, price: 1.99)
-
-
-#### Broccoli ####
-broccoli = Item.create(category: Category.find_by(name: "Produce"), name: "Broccoli Crown", brand: "Produce", description: "Fresh Broccoli Crowns", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_42d7673d-8670-469d-8a32-0fc5760e1a7f.jpg", tags: "broccoli brocoli crown ")
-broccoli.store_prices.create(store_id: 3, price: 1.99)
-broccoli.store_prices.create(store_id: 4, price: 2.59)
-broccoli.store_prices.create(store_id: 5, price: 3.99)
-broccoli.store_prices.create(store_id: 6, price: 2.79)
-
-#### Asparagus ####
-asparagus = Item.create(category: Category.find_by(name: "Produce"), name: "Local Asparagus", brand: "Produce", description: "Enjoy this spring favorite veggie raw, in salads, steamed, or roasted.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_7b757912-89ea-4f37-8aa6-3290d90eeb43.jpg", tags: "asparagus spears ")
-asparagus.store_prices.create(store_id: 3, price: 4.99)
-asparagus.store_prices.create(store_id: 4, price: 4.89)
-asparagus.store_prices.create(store_id: 5, price: 6.99)
-asparagus.store_prices.create(store_id: 6, price: 5.59)
-
-
-#### Bell Peppers ####
-red_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Red Bell Pepper", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_748bbd55-f1ee-4760-9a37-873bd4fe1dd8.jpg", tags: "peppers pepper red bell")
-red_bell_pepper.store_prices.create(store_id: 3, price: 0.99)
-red_bell_pepper.store_prices.create(store_id: 4, price: 0.99)
-red_bell_pepper.store_prices.create(store_id: 5, price: 1.99)
-red_bell_pepper.store_prices.create(store_id: 6, price: 1.20)
-
-green_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Green Bell Peppers", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://shop.safeway.com/productimages/200x200/184480005_200x200.jpg", tags: "peppers pepper green bell")
-green_bell_pepper.store_prices.create(store_id: 6, price: 0.70)
-green_bell_pepper.store_prices.create(store_id: 6, price: 0.90)
-green_bell_pepper.store_prices.create(store_id: 6, price: 1.90)
-green_bell_pepper.store_prices.create(store_id: 6, price: 1.00)
-
-orange_bell_pepper = Item.create(category: Category.find_by(name: "Produce"), name: "Orange Bell Peppers", brand: "Produce", description: "Perfect for snacking, salads, and grilling.", image_url: "https://shop.safeway.com/productimages/100x100/184480013_100x100.jpg", tags: "peppers pepper orange bell")
-orange_bell_pepper.store_prices.create(store_id: 3, price: 1.20)
-orange_bell_pepper.store_prices.create(store_id: 4, price: 1.50)
-orange_bell_pepper.store_prices.create(store_id: 5, price: 1.99)
-orange_bell_pepper.store_prices.create(store_id: 6, price: 1.70)
-
-
-#### Onion ####
-
-red_onion = Item.create(category: Category.find_by(name: "Produce"), name: "Red Onion", brand: "Produce", description: "Red Onions are in season year-round", image_url: "https://d2d8wwwkmhfcva.cloudfront.net/600x/filters:fill(FFF,true):format(jpg)/d2lnr5mha7bycj.cloudfront.net/product-image/file/large_55e5259d-438f-4358-89cb-683a8f4874de.jpg", tags: "onions red")
-red_onion.store_prices.create(store_id: 3, price: 1.20)
-red_onion.store_prices.create(store_id: 4, price: 1.75)
-red_onion.store_prices.create(store_id: 5, price: 2.59)
-red_onion.store_prices.create(store_id: 6, price: 1.64)
-
-yellow_onion = Item.create(category: Category.find_by(name: "Produce"), name: "Yellow Onion", brand: "Produce", description: "Yellow Onions are in season year-round", image_url: "https://shop.safeway.com/productimages/200x200/184710074_200x200.jpg", tags: "onions white yellow")
-yellow_onion.store_prices.create(store_id: 3, price: 1.20)
-yellow_onion.store_prices.create(store_id: 4, price: 1.75)
-yellow_onion.store_prices.create(store_id: 5, price: 2.59)
-yellow_onion.store_prices.create(store_id: 6, price: 1.64)
-
-#### Tomato ####
-large_tomato = Item.create(category: Category.find_by(name: "Produce"), name: "Large Red Tomato", brand: "Produce", description: "These delicate beauties are ripened on the vine.", image_url: "https://shop.safeway.com/productimages/100x100/184570063_100x100.jpg", tags: "tomatoe tomato heirloom")
-large_tomato.store_prices.create(store_id: 3, price: 1.20)
-large_tomato.store_prices.create(store_id: 4, price: 1.75)
-large_tomato.store_prices.create(store_id: 5, price: 2.59)
-large_tomato.store_prices.create(store_id: 6, price: 1.64)
-
 ################## Category 3: Dairy & Eggs
 
 ### Eggs ###
-dozen_eggs = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "1 Dozen Organic Eggs", description: "Certified Organic.", image_url: "https://media.glamour.com/photos/5695983f93ef4b09520d51ff/master/pass/health-fitness-2013-02-dozen-eggs-main.jpg", tags: "dozen eggs")
+dozen_eggs = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "1 Dozen Organic Eggs", description: "Certified Organic, high quality protein.", image_url: "https://media.glamour.com/photos/5695983f93ef4b09520d51ff/master/pass/health-fitness-2013-02-dozen-eggs-main.jpg", tags: "dozen eggs")
 dozen_eggs.store_prices.create(store_id: 3, price: 3.20)
 
 dozen_eggs.store_prices.create(store_id: 4, price: 3.75)
@@ -171,7 +171,7 @@ fat_free_milk.store_prices.create(store_id: 5, price: 8.49)
 fat_free_milk.store_prices.create(store_id: 6, price: 7.99)
 
 ### coffee creamer ###
-coffee_creamer = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Coffee Creamer, French Vanilla", description: "Organic, Vitamin D!", image_url: "https://i5.walmartimages.com/asr/16a09f1c-e0f8-4b4d-82a3-c05c5c52aa42_1.067e61791ee07acebe628561597a549d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", tags: "coffee creamer french vanilla")
+coffee_creamer = Item.create(category: Category.find_by(name: "Dairy & Eggs"), name: "Coffee Creamer, French Vanilla", description: "Coffeemate French Vanilla flavor coffee creamer is the perfect way to create a delicious cup of creamy vanilla perfection.", image_url: "https://i5.walmartimages.com/asr/16a09f1c-e0f8-4b4d-82a3-c05c5c52aa42_1.067e61791ee07acebe628561597a549d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF", tags: "coffee creamer french vanilla")
 coffee_creamer.store_prices.create(store_id: 1, price: 1.99)
 coffee_creamer.store_prices.create(store_id: 2, price: 1.99)
 coffee_creamer.store_prices.create(store_id: 3, price: 2.99)
@@ -180,7 +180,7 @@ coffee_creamer.store_prices.create(store_id: 6, price: 2.29)
 
 ################## Category 4: Frozen Foods
 
-fr_taquitos = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Taquitos, count: 24", description: "Delicious Chicken Taquitos!", image_url: "https://pbs.twimg.com/media/C3VBOo4VUAEV6ZM.jpg", tags: "taquitos microwaveable frozen")
+fr_taquitos = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Taquitos, count: 24", description: "Crispy, crunchy, and oh-so-incredibly easy...delicious Chicken Taquitos!", image_url: "https://pbs.twimg.com/media/C3VBOo4VUAEV6ZM.jpg", tags: "taquitos microwaveable frozen")
 fr_taquitos.store_prices.create(store_id: 1, price: 5.99)
 fr_taquitos.store_prices.create(store_id: 2, price: 6.59)
 fr_taquitos.store_prices.create(store_id: 3, price: 5.99)
@@ -202,7 +202,7 @@ digiorno.store_prices.create(store_id: 3, price: 4.19)
 digiorno.store_prices.create(store_id: 4, price: 4.79)
 digiorno.store_prices.create(store_id: 6, price: 5.99)
 
-froyo = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Ben & Jerrys Fro Yo Frozen Yogurt Low Fat Half Baked - 1 Pint", description: "Chocolate & vanilla low fat frozen yogurts mixed with gobs of chocolate chip cookie dough & fudge brownies.", image_url: "https://shop.safeway.com/productimages/200x200/142050503_200x200.jpg", tags: "frozen yogurt ben & jerrys froyo half baked")
+froyo = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Ben & Jerrys Frozen Yogurt Low-Fat Half Baked - 1 Pint", description: "Chocolate & vanilla low fat frozen yogurts mixed with gobs of chocolate chip cookie dough & fudge brownies.", image_url: "https://shop.safeway.com/productimages/200x200/142050503_200x200.jpg", tags: "frozen yogurt ben & jerrys froyo half baked")
 froyo.store_prices.create(store_id: 1, price: 4.99)
 froyo.store_prices.create(store_id: 2, price: 4.80)
 froyo.store_prices.create(store_id: 3, price: 4.29)
@@ -223,7 +223,7 @@ halotop.store_prices.create(store_id: 3, price: 4.29)
 halotop.store_prices.create(store_id: 4, price: 5.50)
 halotop.store_prices.create(store_id: 6, price: 5.59)
 
-bombpops = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Halo Top Ice Cream Oatmeal Cookie - 1 Pint", description: "Good source of protein. 280 calories per pint. All natural. Let's not rush this. It's worth the wait.", image_url: "https://shop.safeway.com/productimages/200x200/142010459_200x200.jpg", tags: "ice cream halo top oatmeal cookie")
+bombpops = Item.create(category: Category.find_by(name: "Frozen Food"), name: "Bomb Pop Pops Original - 12-1.75 Fl. Oz.", description: "Naturally and artificially flavored frozen confection. Cherry, lime & blue raspberry. The original.", image_url: "https://shop.safeway.com/productimages/200x200/960100621_200x200.jpg", tags: "fruit popsicle bomb pops")
 bombpops.store_prices.create(store_id: 1, price: 3.19)
 bombpops.store_prices.create(store_id: 2, price: 3.60)
 bombpops.store_prices.create(store_id: 3, price: 3.29)
@@ -261,7 +261,7 @@ lasagna.store_prices.create(store_id: 6, price: 3.99)
 
 ############## Category 5: Beverages
 
-ground_coffee = Item.create(category: Category.find_by(name: "Beverages"), name: "French Roast, 12 oz.", description: "French Roast Ground", image_url: "https://a1coffee.net/media/catalog/category/ground_coffee_.jpg", tags: "coffee ground")
+ground_coffee = Item.create(category: Category.find_by(name: "Beverages"), name: "French Roast, 12 oz.", description: "Liquid Gold. French Roast Ground", image_url: "https://a1coffee.net/media/catalog/category/ground_coffee_.jpg", tags: "coffee ground")
 ground_coffee.store_prices.create(store_id: 1, price: 10.99)
 ground_coffee.store_prices.create(store_id: 2, price: 10.50)
 ground_coffee.store_prices.create(store_id: 3, price: 8.99)
