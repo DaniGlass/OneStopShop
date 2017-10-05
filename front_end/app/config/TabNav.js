@@ -16,11 +16,9 @@ const TabNav = TabNavigator({
     screen: Search,
     navigationOptions: {
       tabBarLabel: "Categories",
-      tabBarIcon: ({ tintColor }) => <Icon
-                                      size={ICON_SIZE}
-                                      color={colors.icon}
-                                      name="search"
-                                    />
+      tabBarIcon: ({ tintColor }) => <Icon size={ICON_SIZE}
+        color={colors.icon}
+        name="search" />
     },
   },
   StackNav: { screen: StackNav,
@@ -33,9 +31,9 @@ const TabNav = TabNavigator({
     navigationOptions: {
       tabBarLabel: "Shopping List",
       tabBarIcon: ({ tintColor }) => <Icon
-                                      size={ICON_SIZE}
-                                      color={colors.icon}
-                                      name="shopping-bag"
+        size={ICON_SIZE}
+        color={colors.icon}
+        name="shopping-bag"
                                     />
     },
   }
