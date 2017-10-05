@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import colors from '../config/colors';
 import { Item } from '../components/Item';
+// import BottomNav from '../components/common';
 
 class ItemList extends Component {
 
