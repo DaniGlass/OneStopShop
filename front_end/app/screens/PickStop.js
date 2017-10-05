@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import colors from '../config/colors';
 import { StoreResults } from '../components/StoreResults';
-import { BottomNav } from '../components/BottomNav';
+// import { BottomNav } from '../components/BottomNav';
 
 
 class PickStop extends Component {
@@ -37,7 +37,6 @@ class PickStop extends Component {
         {this.state.results.map((store, idx) => (
           <StoreResults store={store} getStoreResults={this.getStoreResults} key={idx} />
         ))}
-        <BottomNav />
       </ScrollView>
     );
   }

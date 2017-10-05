@@ -11,13 +11,6 @@ import LoginForm from '../components/LoginForm';
 import RegistrationForm from '../components/RegistrationForm';
 
 const StackNav = StackNavigator({
-  PickStop: {
-    screen: PickStop,
-    navigationOptions: {
-      title: 'Your Possible Stops',
-      headerLeft: null
-    },
-  },
   LoginForm: {
     screen: LoginForm,
     navigationOptions: {
@@ -29,6 +22,13 @@ const StackNav = StackNavigator({
     screen: RegistrationForm,
     navigationOptions: {
       title: 'Register',
+    },
+  },
+  PickStop: {
+    screen: PickStop,
+    navigationOptions: {
+      title: 'Your Possible Stops',
+      headerLeft: null
     },
   },
   Search: {

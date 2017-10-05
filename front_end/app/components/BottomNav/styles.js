@@ -6,6 +6,9 @@ export default StyleSheet.create({
   footerStyle: {
     height: 60,
     position: 'relative',
+    bottom: 0,
+    left: 0,
+    right: 0,
     backgroundColor: colors.buttonBackground,
     flexDirection: 'row',
     justifyContent: 'space-around',
