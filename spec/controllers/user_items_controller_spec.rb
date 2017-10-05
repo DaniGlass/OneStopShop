@@ -34,4 +34,5 @@ describe UserItemsController do
   #     expect { delete(:action=>"destroy", :user=>user.id, :controller=>"user_items", :post_id=>user_item) }.to change(UserItem, :count).by(-1)
   #   end
   # end
+  
 end
