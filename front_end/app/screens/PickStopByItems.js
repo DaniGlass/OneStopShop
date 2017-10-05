@@ -40,7 +40,7 @@ class PickStop extends Component {
     return (
       <Container>
         <Segment>
-          <Button first onPress={() => navigate('PickStopByItems')}>
+          <Button first active onPress={() => navigate('PickStopByItems')}>
             <Text>By Items</Text>
           </Button>
           <Button onPress={() => navigate('PickStopByDistance')}>

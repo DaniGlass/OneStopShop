@@ -12,15 +12,12 @@ class LoginForm extends Component {
       passsword: '',
       errors: [],
     };
-
     this.onButtonPress = this.onButtonPress.bind(this);
   }
 
   onButtonPress() {
     const { email, password } = this.state;
     const { navigate } = this.props.navigation;
-
-
 
     axios.post('http://localhost:3000/api/login', { email, password })
      .then(response => {
@@ -42,7 +39,6 @@ class LoginForm extends Component {
 
   render() {
     const { navigate } = this.props.navigation;
-
 
     return (
       <View>
