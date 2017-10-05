@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe ResultsController, type: :controller do
 
-  let!(:user) { User.create!(name: "Ikko", email: "ikko@ikko", password: "schoeller") }
+  let!(:user) { User.create!(name: "Ikko", username: "ikko", email: "ikko@ikko.com", password: "schoeller") }
  
   describe "GET #index" do
     it "returns JSON" do
@@ -21,6 +21,5 @@ describe ResultsController, type: :controller do
       get :by_shortest_distance, :format => :json, params: {id: user.id}
     end
   end
-
 
 end
