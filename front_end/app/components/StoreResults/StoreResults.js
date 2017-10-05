@@ -18,7 +18,7 @@ class StoreResults extends Component {
     return (
       <View style={styles.row}>
         <Image
-          source={{ uri: this.props.store[1].closest_store.image_url }}
+          source={{ uri: this.props.store[1].store_img_url }}
           style={styles.image}
         />
         <View style={styles.descriptionContainer}>
