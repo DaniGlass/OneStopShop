@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 import { categories } from '../config/data';
 import colors from '../config/colors';
@@ -12,14 +12,11 @@ class Search extends Component {
 
   render() {
     return(
-      <FlatList
-        style={{ backgroundColor: colors.background }}
-        data={categories}
-        renderItem={({ item }) =>
-          <CategoriesList category={item} onPress={() => this.handleRowPress(item)} />
-        }
-        keyExtractor={(item) => item.id}
-      />
+      <ScrollView style={{ backgroundColor: colors.background}} >
+        {categories.map((category, idx) => (
+          <CategoriesList category={category} onPress={() => this.handleRowPress(category)} key={idx} />
+        ))}
+      </ScrollView>
     );
   }
 }
