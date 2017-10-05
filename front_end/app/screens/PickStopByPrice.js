@@ -24,7 +24,7 @@ class PickStop extends Component {
   }
 
   getStoreResults() {
-    axios.get('http://localhost:3000/users/1/results')
+    axios.get('http://localhost:3000/users/1/results/by_price')
       .then(response => {
         console.log(response.data)
         this.setState({results: response.data})
@@ -40,14 +40,14 @@ class PickStop extends Component {
     return (
       <Container>
         <Segment>
-          <Button first active onPress={() => navigate('PickStopByItems')} style={{backgroundColor: colors.navTabBackground}}>
-            <Text style={{color: "white", fontSize: 16, fontWeight: 'bold'}}>By Items</Text>
+          <Button first onPress={() => navigate('PickStopByItems')} >
+            <Text>By Items</Text>
           </Button>
           <Button onPress={() => navigate('PickStopByDistance')}>
             <Text>By Distance</Text>
           </Button>
-          <Button last onPress={() => navigate('PickStopByPrice')}>
-            <Text>By Price</Text>
+          <Button last active onPress={() => navigate('PickStopByPrice')} style={{backgroundColor: colors.navTabBackground}}>
+            <Text style={{color: "white", fontSize: 16, fontWeight: 'bold'}}>By Price</Text>
           </Button>
         </Segment>
         <ScrollView style={{ backgroundColor: colors.background}} >

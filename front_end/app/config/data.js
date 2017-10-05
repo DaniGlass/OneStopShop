@@ -1,17 +1,17 @@
 export const categories = [
   {
     id: 1,
-    name: "Meat, Poultry, & Fish",
-    // image_url: "https://stateofmind13.files.wordpress.com/2012/04/raw-meat.jpg",
-    // image_url: "https://www.gfs.com/sites/gfs.com/files/styles/content_article_image/public/MeatPoultryFish_ICHeader.jpg?itok=kMW2mbi8",
-    image_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjJ4IaI0dDWAhXnyVQKHQXCA1wQjRwIBw&url=https%3A%2F%2Fwww.pinterest.com%2Fexplore%2Fheme-iron%2F&psig=AOvVaw2w-D4dSk3_TzJdmvqI0PTK&ust=1506988767226284",
-  },
-  {
-    id: 2,
     name: "Produce",
     // image_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiIl8ma0dDWAhWps1QKHcS2DZoQjRwIBw&url=http%3A%2F%2F99only.com%2Ffarm-fresh-produce%2F&psig=AOvVaw1F_TOyQx4uTmC_khX1-cfB&ust=1506988880330349",
     // image_url: "https://cdn.thinglink.me/api/image/722499555140042753/1240/10/scaletowidth",
     image_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjbxrDL0dDWAhVBlFQKHUFiBzMQjRwIBw&url=http%3A%2F%2Fwoman.thenest.com%2Fnatural-foods-high-roughage-18478.html&psig=AOvVaw1F_TOyQx4uTmC_khX1-cfB&ust=1506988880330349",
+  },
+  {
+    id: 2,
+    name: "Meat, Poultry, & Fish",
+    // image_url: "https://stateofmind13.files.wordpress.com/2012/04/raw-meat.jpg",
+    // image_url: "https://www.gfs.com/sites/gfs.com/files/styles/content_article_image/public/MeatPoultryFish_ICHeader.jpg?itok=kMW2mbi8",
+    image_url: "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwjJ4IaI0dDWAhXnyVQKHQXCA1wQjRwIBw&url=https%3A%2F%2Fwww.pinterest.com%2Fexplore%2Fheme-iron%2F&psig=AOvVaw2w-D4dSk3_TzJdmvqI0PTK&ust=1506988767226284",
   },
   {
     id: 3,

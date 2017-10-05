@@ -1,14 +1,14 @@
 export default {
   // background: '#A3E4D7',
-  background: '#ABEBC6',
-  row: '#D5F5E3',
+  background: '#FBFCFC',
+  row: 'white',
   primaryText: '#641E16',
   subtleText: '#9a9a9a',
   rowUnderlay: 'rgba(254, 254, 254, 0.8)',
-  addIcon: '#7B241C',
+  addIcon: '#239B56',
   labelColor: 'white',
-  navTabBackground: '#37474F',
-  icon: '#7B241C',
+  navTabBackground: '#239B56', //Green
+  icon: '#239B56', //Green
   buttonText: '#7B241C',
   buttonBackground: '#9a9a9a',
 };
