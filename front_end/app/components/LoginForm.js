@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import axios from 'axios';
 import { Button, Card, CardSection, Input } from './common';
+import RegistrationForm from './RegistrationForm';
 
 class LoginForm extends Component {
   constructor() {
@@ -73,7 +74,7 @@ class LoginForm extends Component {
           </CardSection>
 
           <CardSection>
-            <Button onPress={() => navigate('Register')}>
+            <Button onPress={() => navigate('RegistrationForm')}>
               Register
             </Button>
           </CardSection>

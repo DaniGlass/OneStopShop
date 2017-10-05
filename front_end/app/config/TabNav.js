@@ -12,6 +12,11 @@ const ICON_SIZE = 25;
 const logo = require('../images/OneStopShopLogo.png');
 
 const TabNav = TabNavigator({
+  StackNav: { screen: StackNav,
+    navigationOptions: {
+      visible: true,
+    },
+  },
   Search: {
     screen: Search,
     navigationOptions: {
@@ -19,11 +24,6 @@ const TabNav = TabNavigator({
       tabBarIcon: ({ tintColor }) => <Icon size={ICON_SIZE}
         color={colors.icon}
         name="search" />
-    },
-  },
-  StackNav: { screen: StackNav,
-    navigationOptions: {
-      visible: true,
     },
   },
   ShoppingList: {
