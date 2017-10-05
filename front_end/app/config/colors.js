@@ -7,8 +7,8 @@ export default {
   rowUnderlay: 'rgba(254, 254, 254, 0.8)',
   addIcon: '#239B56',
   labelColor: 'white',
-  navTabBackground: '#239B56',
-  icon: '#239B56',
+  navTabBackground: '#239B56', //Green
+  icon: '#239B56', //Green
   buttonText: '#7B241C',
   buttonBackground: '#9a9a9a',
 };

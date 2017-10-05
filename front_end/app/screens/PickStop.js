@@ -40,8 +40,8 @@ class PickStop extends Component {
     return (
       <Container>
         <Segment>
-          <Button first onPress={() => navigate('PickStopByItems')}>
-            <Text>By Items</Text>
+          <Button first active onPress={() => navigate('PickStopByItems')} style={{backgroundColor: colors.navTabBackground}}>
+            <Text style={{color: "white", fontSize: 16, fontWeight: 'bold'}}>By Items</Text>
           </Button>
           <Button onPress={() => navigate('PickStopByDistance')}>
             <Text>By Distance</Text>
