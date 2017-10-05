@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Image } from 'react-native';
 import { TabNavigator, TabView } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import StackNav from './StackNav';
@@ -11,9 +12,11 @@ import colors from './colors';
 const ICON_SIZE = 25;
 
 const TabNav = TabNavigator({
-  StackNav: { screen: StackNav,
+  StackNav: {
+    screen: StackNav,
     navigationOptions: {
-      visible: false,
+      tabBarLabel: "OneStopShop",
+      tabBarIcon: () => <Image style={{width: 30, height: 30}} source={require('../images/one_Stop_shop.png')}/>
     },
   },
   Search: {
@@ -21,8 +24,9 @@ const TabNav = TabNavigator({
     navigationOptions: {
       tabBarLabel: "Categories",
       tabBarIcon: ({ tintColor }) => <Icon size={ICON_SIZE}
-        color={colors.icon}
-        name="search" />
+                                        color={colors.icon}
+                                        name="search"
+                                      />
     },
   },
   ShoppingList: {
@@ -30,9 +34,9 @@ const TabNav = TabNavigator({
     navigationOptions: {
       tabBarLabel: "Shopping List",
       tabBarIcon: ({ tintColor }) => <Icon
-        size={ICON_SIZE}
-        color={colors.icon}
-        name="shopping-bag"
+                                      size={ICON_SIZE}
+                                      color={colors.icon}
+                                      name="shopping-bag"
                                     />
     },
   }
