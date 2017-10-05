@@ -22,7 +22,7 @@ class User < ApplicationRecord
     results = {}
 
     Store.all.each do |store|
-      results[store.name] = {total_price: store.users_total_price(user_items), not_found_names: store.find_users_missing_items(user_items), not_found_count: store.find_users_missing_items(user_items).count, found_items_count: store.users_items_found_count(user_items), user_list_count: user_items.count,closest_store: store.closest_store_from_user_location}
+      results[store.name] = {store_img_url: store.get_store_img_url, total_price: store.users_total_price(user_items), not_found_names: store.find_users_missing_items(user_items), not_found_count: store.find_users_missing_items(user_items).count, found_items_count: store.users_items_found_count(user_items), user_list_count: user_items.count,closest_store: store.closest_store_from_user_location}
     end
     results
   end
