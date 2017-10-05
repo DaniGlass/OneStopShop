@@ -1,24 +1,24 @@
-// import React from 'react';
-// import TabNav from './config/TabNav';
+import React from 'react';
+import TabNav from './config/TabNav';
 
-// const App = () => {
-//   return <TabNav/>;
-// };
+const App = () => {
+  return <TabNav/>;
+};
 
-// export default App;
+export default App;
 
 
 // FROM DANI'S BRANCH
 
-import React from 'react';
+// import React from 'react';
 
-import {StackNavigator} from 'react-navigation';
-import Search from './screens/Search';
-import ItemList from './screens/ItemList';
-import ShoppingList from './screens/ShoppingList';
-import PickStop from './screens/PickStop';
-import LoginForm from './components/LoginForm';
-import RegistrationForm from './components/RegistrationForm';
+// import {StackNavigator} from 'react-navigation';
+// import Search from './screens/Search';
+// import ItemList from './screens/ItemList';
+// import ShoppingList from './screens/ShoppingList';
+// import PickStop from './screens/PickStop';
+// import LoginForm from './components/LoginForm';
+// import RegistrationForm from './components/RegistrationForm';
 
 // import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -39,7 +39,7 @@ import RegistrationForm from './components/RegistrationForm';
 //   this.props.navigation.navigate('Search');
 // };
 
-const App = StackNavigator({
+// const App = StackNavigator({
   // Login: { screen: LoginForm },
   // Register: { screen: RegistrationForm },
   // Search: {
@@ -55,21 +55,21 @@ const App = StackNavigator({
   //     title: `${navigation.state.params.name}`,
   //     headerLeft: null,
   //   }),
+  // // },
+  // ShoppingList: {
+  //   screen: ShoppingList,
+  //   navigationOptions: {
+  //     title: 'Shopping List',
+  //     headerLeft: null
+  //   },
   // },
-  ShoppingList: {
-    screen: ShoppingList,
-    navigationOptions: {
-      title: 'Shopping List',
-      headerLeft: null
-    },
-  },
-  PickStop: {
-    screen: PickStop,
-    navigationOptions: {
-      title: 'Your Possible Stops',
-      headerLeft: null
-    },
-  },
-});
+  // PickStop: {
+  //   screen: PickStop,
+  //   navigationOptions: {
+  //     title: 'Your Possible Stops',
+  //     headerLeft: null
+//     },
+//   },
+// });
 
-export default App;
+// export default App;

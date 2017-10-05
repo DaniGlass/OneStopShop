@@ -16,11 +16,11 @@ class PickStop extends Component {
     this.getStoreResults = this.getStoreResults.bind(this);
   }
 
-  componentDidMount() {
+ componentDidMount() {
     this.getStoreResults();
   }
 
-  getStoreResults() {
+ getStoreResults() {
     axios.get('http://localhost:3000/users/1/results')
       .then(response => {
         console.log(response.data)
@@ -31,7 +31,7 @@ class PickStop extends Component {
       });
   }
 
-  render() {
+ render() {
     return (
       <ScrollView style={{ backgroundColor: colors.background}} >
         {this.state.results.map((store, idx) => (

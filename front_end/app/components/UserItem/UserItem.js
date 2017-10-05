@@ -7,29 +7,39 @@ import colors from '../../config/colors';
 import styles, { ADD_SIZE } from './styles';
 
 class UserItem extends Component {
-  // constructor() {
+  // constructor(props) {
   //   super(props);
-  //   (this: any).handleAddPress = this.handleAddPress.bind(this);
+  //   this.state = {
+  //     items
+  //   };
+  //   this.getUserItems = this.getUserItems.bind(this);
   // }
 
-  // handleDeletePress() {
-  //   axios.delete('http://localhost:3000/user_items', {user_item: this.props.user.item})
-  //   .then(response => {
-  //     console.log(response);
-  //     this.props.getUserItems();
-  //   })
-  //   .catch(function(error) {
-  //     console.log(error);
-  //   });
-  // }
+  handleDeletePress() {
+    this.deleteUserItem();
+  }
+
+  deleteUserItem() {
+    const user_item = this.props.user_item;
+    console.log(user_item);
+    axios.post(`http://localhost:3000/users/1/user_items/${user_item.id}`, {user_item_id: this.props.user_item.id})
+    // axios.get(`http://localhost:3000/users/1/user_items/${user_item.id}`, {user_item: this.props.user_item})
+    .then(response => {
+      console.log(response);
+      this.props.getUserItems();
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
 
   render() {
-    const iconName = 'ion-ios-minus-outline';
+    const iconName = 'ios-remove-circle-outline';
     return (
-      // <TouchableHighlight
-      //   onPress={() => this.handleDeletePress()}
-      //   underlayColor={colors.rowUnderlay}
-      // >
+      <TouchableHighlight
+        onPress={() => this.handleDeletePress()}
+        underlayColor={colors.rowUnderlay}
+      >
         <View style={styles.row}>
           <Image
             source={{ uri: this.props.user_item.image_url }}
@@ -39,9 +49,16 @@ class UserItem extends Component {
             <Text style={styles.name}>{this.props.user_item.name}</Text>
             <Text style={styles.description}>{this.props.user_item.description}</Text>
           </View>
-
+          <View style={styles.addContainer}>
+            <Icon
+              name={iconName}
+              size={ADD_SIZE}
+              colors={colors.addIcon}
+              style={styles.add}
+            />
+          </View>
         </View>
-      // </TouchableHighlight>
+      </TouchableHighlight>
     );
   }
 }
