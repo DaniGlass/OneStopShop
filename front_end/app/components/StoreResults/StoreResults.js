@@ -9,7 +9,11 @@ class StoreResults extends Component {
   render() {
     const distance = ((this.props.store[1].closest_store.distance) * 0.000621371).toFixed(2);
     let itemsNotFound = this.props.store[1].not_found_names.join("\n");
-    if (itemsNotFound.length === 0) {itemsNotFound = "All items were found"};
+    let itemsFoundMessage = "Items Not Found:";
+    if (itemsNotFound.length === 0) {
+      itemsFoundMessage = null;
+      itemsNotFound = null;
+    };
 
     return (
       <View style={styles.row}>
@@ -23,7 +27,7 @@ class StoreResults extends Component {
           <Text style={styles.description}>{this.props.store[1].closest_store.location.display_address[1]}</Text>
           <Text style={styles.distance}>{distance} miles away</Text>
           <View>
-            <Text style={styles.secondaryText}>Items Not Found:</Text>
+            <Text style={styles.secondaryText}>{itemsFoundMessage}</Text>
             <Text style={styles.smallText}>{itemsNotFound}</Text>
           </View>
         </View>

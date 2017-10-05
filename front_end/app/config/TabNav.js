@@ -9,12 +9,11 @@ import Search from '../screens/Search';
 import colors from './colors';
 
 const ICON_SIZE = 25;
-const logo = require('../images/OneStopShopLogo.png');
 
 const TabNav = TabNavigator({
   StackNav: { screen: StackNav,
     navigationOptions: {
-      visible: true,
+      visible: false,
     },
   },
   Search: {
