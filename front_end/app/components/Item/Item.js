@@ -17,7 +17,7 @@ class Item extends Component {
   }
 
   createUserItem() {
-    axios.post('http://localhost:3000/users/1/user_items', {item: this.props.item})
+    axios.post('https://one-stop-shopsin.herokuapp.com/users/1/user_items', {item: this.props.item})
     .then(response => {
       console.log(response);
       this.props.getItems();

@@ -22,7 +22,7 @@ class ItemList extends Component {
 
   getItems() {
     const category = this.props.navigation.state.params;
-    axios.get(`http://localhost:3000/categories/${category.id}`)
+    axios.get(`https://one-stop-shopsin.herokuapp.com/categories/${category.id}`)
       .then(response => {
         this.setState({items: response.data})
       })
