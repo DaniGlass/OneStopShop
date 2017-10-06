@@ -24,7 +24,7 @@ class PickStop extends Component {
   }
 
   getStoreResults() {
-    axios.get('http://localhost:3000/users/1/results/by_distance')
+    axios.get('https://one-stop-shopsin.herokuapp.com/users/1/results/by_distance')
       .then(response => {
         console.log(response.data)
         this.setState({results: response.data})

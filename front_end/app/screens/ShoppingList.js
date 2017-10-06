@@ -22,7 +22,7 @@ class ShoppingList extends Component {
   }
 
   getUserItems() {
-    axios.get('http://localhost:3000/users/1/user_items')
+    axios.get('https://one-stop-shopsin.herokuapp.com/users/1/user_items')
       .then(response => {
         this.setState({userItems: response.data})
       })

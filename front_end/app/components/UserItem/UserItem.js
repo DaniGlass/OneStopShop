@@ -22,7 +22,7 @@ class UserItem extends Component {
   deleteUserItem() {
     const user_item = this.props.user_item;
     console.log(user_item);
-    axios.post(`http://localhost:3000/users/1/user_items/${user_item.id}`, {user_item_id: this.props.user_item.id})
+    axios.post(`https://one-stop-shopsin.herokuapp.com/1/user_items/${user_item.id}`, {user_item_id: this.props.user_item.id})
     // axios.get(`http://localhost:3000/users/1/user_items/${user_item.id}`, {user_item: this.props.user_item})
     .then(response => {
       console.log(response);

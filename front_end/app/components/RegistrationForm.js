@@ -20,7 +20,7 @@ class RegistrationForm extends Component {
     const { navigate } = this.props.navigation;
 
 
-    axios.post('http://localhost:3000/api/users', { username, email, password })
+    axios.post('https://one-stop-shopsin.herokuapp.com/api/users', { username, email, password })
       .then(response => {
           console.log(response)
         if (response.data.status === 'SUCCESS') {
