@@ -7,7 +7,7 @@ export default StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 15,
+    paddingHorizontal: 20,
     paddingVertical: 8,
     backgroundColor: colors.row,
     marginVertical: 2,
