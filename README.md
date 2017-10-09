@@ -77,7 +77,7 @@ The website uses a Postgres database
 
 ### Database schema
 
-![DB schema](https://github.com/NEEDS TO BE CORRECTED.png)
+![DB schema](https://github.com/DaniGlass/OneStopShop/blob/master/OneStopShopSchema.png)
 
 ## Testing
 
