@@ -1,17 +1,19 @@
 # README
 
-##  Welcome to OneStopShop
+##  Welcome to OneStopShop!
 
-Description.......
-
+This user focused IOS app allows you to put all of your home shopping needs in one easy to use list. It then gives you the ability to find a store near you that has most, if not all of the items on your list. Thus, you find your "OneStopShop." 
 
 ## Core Goals:
 
-1. ......
+1. Help shoppers cut down shopping time, multiple store visits, and reduce the need for in store price comparison.  
+2. Give OneStopShoppers the power to choose how they want to shop. 
 
 ## Stretch Goals:
 
-1. .......
+1. Intigrate higher quality price comparison
+2. Integrate open maps capabilities
+3. Integrate searchable items option with brand choice and quanitity
 
 ## Project Management Tool
 
@@ -75,7 +77,7 @@ The website uses a Postgres database
 
 ### Database schema
 
-![DB schema](https://github.com/jshopsin/Hawk_Set/blob/master/schema.png)
+![DB schema](https://github.com/NEEDS TO BE CORRECTED.png)
 
 ## Testing
 
