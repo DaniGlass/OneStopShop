@@ -2,11 +2,11 @@
 
 ##  Welcome to OneStopShop!
 
-This user focused IOS app allows you to put all of your home shopping needs in one easy to use list. It then gives you the ability to find a store near you that has most, if not all of the items on your list. Thus, you find your "OneStopShop." 
+This beautifully simple IOS app allows you to put all of your home shopping needs in one easy to use list. You may then find a store near you that has most, if not all, of the items on your shopping list. Thus, you find your "OneStopShop." 
 
 ## Core Goals:
 
-1. Help shoppers cut down shopping time, multiple store visits, and reduce the need for in store price comparison.  
+1. Help shoppers cut reduce shopping time, multiple store visits, and the need for in store price comparison.  
 2. Give OneStopShoppers the power to choose how they want to shop. 
 
 ## Stretch Goals:
