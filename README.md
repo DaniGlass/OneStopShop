@@ -6,7 +6,7 @@ This beautifully simple IOS app allows you to put all of your home shopping need
 
 ## Core Goals:
 
-1. Help shoppers cut reduce shopping time, multiple store visits, and the need for in store price comparison.  
+1. Help shoppers reduce shopping time, multiple store visits, and the need for in store price comparison.  
 2. Give OneStopShoppers the power to choose how they want to shop. 
 
 ## Stretch Goals:
