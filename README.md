@@ -2,18 +2,31 @@
 
 ##  Welcome to OneStopShop!
 
-This beautifully simple IOS app allows you to put all of your home shopping needs in one easy to use list. You may then find a store near you that has most, if not all, of the items on your shopping list. Thus, you find your "OneStopShop." 
+This beautifully simple IOS app allows you to put all of your home shopping needs in one easy to use list. You may then find a store near you that has most, if not all, of the items on your shopping list. Thus, you find your "OneStopShop."
 
 ## Core Goals:
 
-1. Help shoppers reduce shopping time, multiple store visits, and the need for in store price comparison.  
-2. Give OneStopShoppers the power to choose how they want to shop. 
+1. Help shoppers reduce shopping time, multiple store visits, and the need for in store price comparison.
+2. Give OneStopShoppers the power to choose how they want to shop.
 
 ## Stretch Goals:
 
 1. Intigrate higher quality price comparison
 2. Integrate open maps capabilities
 3. Integrate searchable items option with brand choice and quanitity
+
+## Screenshots
+
+![Login Screen]()
+![Register Screen]()
+![Categories Screen]()
+![Items Screen]()
+![Item Selected Screen]()
+![Shopping List Screen]()
+![Shopping List Item Deleted Screen]()
+![Store Results by Items Screen]()
+![Store Results by Distance Screen]()
+![Store Results by Price Screen]()
 
 ## Project Management Tool
 
@@ -52,11 +65,11 @@ This beautifully simple IOS app allows you to put all of your home shopping need
     $ rails db:setup
 
     $ rails server (leave server running for backend)
-    
+
     $ cd OneStopShop/front_end
-    
+
     $ npm install
-    
+
     $ react-native run-ios
 
 ## Database
