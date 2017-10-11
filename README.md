@@ -17,16 +17,16 @@ This beautifully simple IOS app allows you to put all of your home shopping need
 
 ## Screenshots
 
-![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg)
-![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg)
-![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg)
-![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg)
-![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg)
-![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg)
-![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg)
-![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg)
-![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg)
-![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg)
+![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg =150x)
+![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg =150x)
+![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg =150x)
+![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg =150x)
+![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg =150x)
+![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg =150x)
+![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg =150x)
+![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg =150x)
+![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg =150x)
+![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg =150x)
 
 ## Project Management Tool
 
@@ -108,10 +108,6 @@ The website uses a Postgres database
 * [Faker](https://github.com/stympy/faker)
 
 * [Warden](https://github.com/hassox/warden/wiki)
-
-## Deployment
-
-* Link to this if we are able to deploy....
 
 ## License
 
