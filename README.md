@@ -17,16 +17,16 @@ This beautifully simple IOS app allows you to put all of your home shopping need
 
 ## Screenshots
 
-![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg){:height="36px" width="36px"}
-![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg){:height="36px" width="36px"}
-![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg){:height="36px" width="36px"}
-![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg){:height="36px" width="36px"}
-![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg){:height="36px" width="36px"}
-![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg){:height="36px" width="36px"}
-![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg){:height="36px" width="36px"}
-![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg){:height="36px" width="36px"}
-![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg){:height="36px" width="36px"}
-![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg){:height="36px" width="36px"}
+<div style="width:50%">![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg)</div>
+![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg)
+![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg)
+![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg)
+![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg)
+![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg)
+![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg)
+![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg)
+![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg)
+![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg)
 
 ## Project Management Tool
 
