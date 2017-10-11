@@ -17,16 +17,16 @@ This beautifully simple IOS app allows you to put all of your home shopping need
 
 ## Screenshots
 
-![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg =150x)
-![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg =150x)
-![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg =150x)
-![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg =150x)
-![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg =150x)
-![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg =150x)
-![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg =150x)
-![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg =150x)
-![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg =150x)
-![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg =150x)
+![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg){:height="36px" width="36px"}
+![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg){:height="36px" width="36px"}
+![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg){:height="36px" width="36px"}
+![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg){:height="36px" width="36px"}
+![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg){:height="36px" width="36px"}
+![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg){:height="36px" width="36px"}
+![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg){:height="36px" width="36px"}
+![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg){:height="36px" width="36px"}
+![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg){:height="36px" width="36px"}
+![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg){:height="36px" width="36px"}
 
 ## Project Management Tool
 
