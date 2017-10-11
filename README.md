@@ -17,16 +17,16 @@ This beautifully simple IOS app allows you to put all of your home shopping need
 
 ## Screenshots
 
-![Login Screen]()
-![Register Screen]()
-![Categories Screen]()
-![Items Screen]()
-![Item Selected Screen]()
-![Shopping List Screen]()
-![Shopping List Item Deleted Screen]()
-![Store Results by Items Screen]()
-![Store Results by Distance Screen]()
-![Store Results by Price Screen]()
+![Login Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/login.jpg)
+![Register Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/register.jpg)
+![Categories Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/categories.jpg)
+![Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items.jpg)
+![Item Selected Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/items_select.jpg)
+![Shopping List Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list.jpg)
+![Shopping List Item Deleted Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/shopping_list_delete.jpg)
+![Store Results by Items Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_items.jpg)
+![Store Results by Distance Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_distance.jpg)
+![Store Results by Price Screen](https://github.com/DaniGlass/OneStopShop/blob/master/lib/screenshots/by_price.jpg)
 
 ## Project Management Tool
 
